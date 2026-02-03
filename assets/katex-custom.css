@@ -1,0 +1,113 @@
+/* KaTeX-like CSS - Minimal implementation for math formulas */
+
+.katex {
+  font: normal 1.21em KaTeX_Main, 'Times New Roman', Times, serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-indent: 0;
+  text-rendering: auto;
+}
+
+.katex-display {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.katex-display > .katex {
+  white-space: normal;
+}
+
+.katex-html {
+  display: inline-block;
+}
+
+.katex-mathml {
+  display: none;
+}
+
+/* Math symbol styles */
+.katex-symbol {
+  font-family: KaTeX_Math, 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+.katex-text {
+  font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+}
+
+/* Subscript and superscript */
+.katex-subscript {
+  font-size: 0.75em;
+  vertical-align: -0.25em;
+  margin-left: 0.16667em;
+  margin-right: 0.16667em;
+}
+
+.katex-superscript {
+  font-size: 0.75em;
+  vertical-align: 0.25em;
+  margin-left: 0.16667em;
+  margin-right: 0.16667em;
+}
+
+/* Fractions */
+.katex-fraction {
+  display: inline-block;
+  text-align: center;
+  vertical-align: 0.2em;
+  padding: 0 0.2em;
+}
+
+.katex-fraction > .katex-numerator {
+  display: block;
+  border-bottom: 1px solid #000;
+  padding: 0 0.1em;
+}
+
+.katex-fraction > .katex-denominator {
+  display: block;
+  padding: 0 0.1em;
+}
+
+/* Square root */
+.katex-sqrt {
+  display: inline-block;
+}
+
+.katex-sqrt > .katex-sqrt-root {
+  display: inline-block;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  padding-left: 0.15em;
+  margin-left: 0.1em;
+}
+
+/* Delimiters */
+.katex-left, .katex-right {
+  font-family: KaTeX_Size1;
+  font-size: 1.2em;
+}
+
+/* Operators */
+.katex-op {
+  font-family: KaTeX_Main;
+}
+
+/* Arrays and matrices */
+.katex-arraycolsep {
+  display: inline-block;
+  width: 0.5em;
+}
+
+/* Inline math styling */
+.katex-inline {
+  font-size: 1em;
+}
+
+/* Display math styling */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5em 0;
+}

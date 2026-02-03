@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="统计推断 - 理解假设检验、置信区间、回归分析等高级方法">
+  <title>统计推断 - 统计学学习平台</title>
+  <link rel="stylesheet" href="assets/bootstrap-custom.css">
+  <link rel="stylesheet" href="assets/katex-custom.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="inference.html">统计推断</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="inference-page">
+      <h1 class="page-title">统计推断</h1>
+
+      <div class="content-card">
+        <h2 class="card-title">🔍 什么是统计推断？</h2>
+        <p>
+          统计推断是根据样本数据对总体特征进行推断的过程。它包括参数估计和假设检验两大类方法。
+          统计推断是统计学最重要的应用领域之一，帮助我们根据有限的样本信息做出关于总体的结论。
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 参数估计</h2>
+
+        <h3 class="mt-4 mb-3">1. 点估计</h3>
+        <p>
+          点估计是用样本统计量的一个具体数值作为总体参数的估计值。
+        </p>
+        <ul>
+          <li><strong>样本均值</strong> 估计总体均值 $\mu$</li>
+          <li><strong>样本方差</strong> 估计总体方差 $\sigma^2$</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">2. 区间估计（置信区间）</h3>
+        <p>
+          置信区间是参数的一个可能取值范围，该范围以一定的概率（置信水平）包含真实的参数值。
+        </p>
+
+        <h4 class="mt-3 mb-2">总体均值的置信区间</h4>
+        <p>对于大样本（$n \geq 30$），使用正态分布：</p>
+        <div class="formula-box">
+          $$\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$$
+        </div>
+        <p class="text-muted">
+          其中：
+        </p>
+        <ul>
+          <li>$\bar{x}$ - 样本均值</li>
+          <li>$z_{\alpha/2}$ - 标准正态分布的临界值</li>
+          <li>$s$ - 样本标准差</li>
+          <li>$n$ - 样本容量</li>
+        </ul>
+
+        <p class="mt-3">对于小样本（$n < 30$），使用 t 分布：</p>
+        <div class="formula-box">
+          $$\bar{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}$$
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🧮 置信区间计算器</h2>
+        <p>输入样本统计量，计算总体均值的置信区间：</p>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">样本均值：</label>
+            <input
+              type="number"
+              step="any"
+              class="form-control"
+              id="sampleMean"
+              placeholder="例如：50"
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">样本标准差：</label>
+            <input
+              type="number"
+              step="any"
+              class="form-control"
+              id="sampleStd"
+              placeholder="例如：5"
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">样本容量：</label>
+            <input
+              type="number"
+              class="form-control"
+              id="sampleSize"
+              placeholder="例如：100"
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">置信水平：</label>
+            <select class="form-select" id="confidenceLevel">
+              <option value="90">90%</option>
+              <option value="95" selected>95%</option>
+              <option value="99">99%</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-custom btn-primary-custom" onclick="calculateCI()">
+          计算置信区间
+        </button>
+
+        <div id="ciResult" class="mt-4" style="display: none;">
+          <h4 class="mb-3">计算结果：</h4>
+          <div class="content-card" style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(63, 81, 181, 0.1) 100%);">
+            <h3 class="text-center mb-3">
+              <span id="lowerBound"></span> <span style="color: var(--primary-color);">≤</span> μ <span style="color: var(--primary-color);">≤</span> <span id="upperBound"></span>
+            </h3>
+            <p class="text-center text-muted">
+              我们有 <span id="confidenceValue"></span>% 的把握认为总体均值在 [<span id="lowerBound2"></span>, <span id="upperBound2"></span>] 之间
+            </p>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <ul class="feature-list">
+                <li>
+                  <div class="feature-icon icon-blue">x̄</div>
+                  <div>
+                    <strong>样本均值：</strong> <span id="meanValue"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="feature-icon icon-pink">s</div>
+                  <div>
+                    <strong>样本标准差：</strong> <span id="stdValue"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="feature-list">
+                <li>
+                  <div class="feature-icon icon-green">n</div>
+                  <div>
+                    <strong>样本容量：</strong> <span id="nValue"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="feature-icon icon-blue">E</div>
+                  <div>
+                    <strong>边际误差：</strong> <span id="marginError"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chart-container mt-4">
+            <canvas id="ciChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">✅ 假设检验</h2>
+
+        <h3 class="mt-4 mb-3">基本概念</h3>
+        <p>
+          假设检验是根据样本数据对关于总体参数的假设进行检验的方法。
+        </p>
+
+        <h4 class="mt-3 mb-2">假设的类型：</h4>
+        <ul>
+          <li><strong>原假设 ($H_0$)</strong>：通常表示"没有差异"或"没有效果"</li>
+          <li><strong>备择假设 ($H_1$)</strong>：通常表示"有差异"或"有效果"</li>
+        </ul>
+
+        <h4 class="mt-3 mb-2">检验步骤：</h4>
+        <ol>
+          <li>建立原假设和备择假设</li>
+          <li>选择适当的检验统计量</li>
+          <li>确定显著性水平（通常为 0.05）</li>
+          <li>计算检验统计量的值</li>
+          <li>做出决策：拒绝或不拒绝原假设</li>
+        </ol>
+
+        <h3 class="mt-4 mb-3">常见的检验类型：</h3>
+
+        <div class="mb-3">
+          <h4>1. z 检验</h4>
+          <p>当总体标准差已知或样本容量较大时使用。</p>
+          <div class="formula-box">
+            $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <h4>2. t 检验</h4>
+          <p>当总体标准差未知且样本容量较小时使用。</p>
+          <div class="formula-box">
+            $$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <h4>3. 卡方检验</h4>
+          <p>用于检验分类变量之间的独立性或拟合优度。</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">💡 假设检验示例</h2>
+        <p>
+          <strong>问题：</strong> 某工厂声称其生产的灯泡平均寿命为 1000 小时。
+          从生产线上随机抽取 36 个灯泡，测得平均寿命为 990 小时，标准差为 50 小时。
+          在 5% 的显著性水平下，能否支持工厂的声称？
+        </p>
+
+        <h4 class="mt-3 mb-2">解答步骤：</h4>
+        <ol>
+          <li>
+            <strong>建立假设：</strong><br />
+            $H_0: \mu = 1000$（灯泡平均寿命为 1000 小时）<br />
+            $H_1: \mu \neq 1000$（灯泡平均寿命不为 1000 小时）
+          </li>
+          <li>
+            <strong>选择检验统计量：</strong><br />
+            使用 t 检验（总体标准差未知）
+          </li>
+          <li>
+            <strong>计算 t 值：</strong><br />
+            $t = \frac{990 - 1000}{50 / \sqrt{36}} = \frac{-10}{8.33} = -1.2$
+          </li>
+          <li>
+            <strong>临界值：</strong><br />
+            在 $\alpha = 0.05$，自由度为 35 时，$t_{0.025, 35} \approx 2.03$
+          </li>
+          <li>
+            <strong>决策：</strong><br />
+            由于 $|t| = 1.2 < 2.03$，不拒绝原假设
+          </li>
+        </ol>
+
+        <div class="alert alert-success mt-3">
+          <strong>结论：</strong> 在 5% 的显著性水平下，样本数据支持工厂的声称，
+          可以认为灯泡的平均寿命为 1000 小时。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎯 重要概念</h2>
+
+        <h3 class="mt-4 mb-3">第一类错误和第二类错误</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th>$H_0$ 为真</th>
+              <th>$H_0$ 为假</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>拒绝 $H_0$</strong></td>
+              <td class="table-danger">第一类错误（假阳性）<br />$P = \alpha$</td>
+              <td class="table-success">正确决策<br />$P = 1 - \beta$</td>
+            </tr>
+            <tr>
+              <td><strong>不拒绝 $H_0$</strong></td>
+              <td class="table-success">正确决策<br />$P = 1 - \alpha$</td>
+              <td class="table-danger">第二类错误（假阴性）<br />$P = \beta$</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul class="mt-3">
+          <li><strong>第一类错误（$\alpha$）</strong>：原假设为真时拒绝原假设的概率</li>
+          <li><strong>第二类错误（$\beta$）</strong>：原假设为假时不拒绝原假设的概率</li>
+          <li><strong>检验功效（$1-\beta$）</strong>：正确拒绝错误原假设的概率</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 统计学学习平台 | 通过交互式学习掌握统计学</p>
+  </footer>
+
+  <script src="assets/bootstrap-custom.js"></script>
+  <script src="assets/katex-custom.js"></script>
+  <script src="assets/chartjs-custom.js"></script>
+  <script>
+    let ciChartInstance = null;
+
+    function calculateCI() {
+      const mean = parseFloat(document.getElementById('sampleMean').value);
+      const std = parseFloat(document.getElementById('sampleStd').value);
+      const n = parseFloat(document.getElementById('sampleSize').value);
+      const cl = parseFloat(document.getElementById('confidenceLevel').value);
+
+      if (isNaN(mean) || isNaN(std) || isNaN(n) || isNaN(cl) || n <= 0) {
+        alert('请输入有效的数值');
+        return;
+      }
+
+      // Z值（大样本情况）
+      const zValues = { 90: 1.645, 95: 1.96, 99: 2.576 };
+      const z = zValues[cl] || 1.96;
+
+      const marginError = z * (std / Math.sqrt(n));
+      const lowerBound = mean - marginError;
+      const upperBound = mean + marginError;
+
+      document.getElementById('lowerBound').textContent = lowerBound.toFixed(4);
+      document.getElementById('upperBound').textContent = upperBound.toFixed(4);
+      document.getElementById('lowerBound2').textContent = lowerBound.toFixed(4);
+      document.getElementById('upperBound2').textContent = upperBound.toFixed(4);
+      document.getElementById('confidenceValue').textContent = cl;
+      document.getElementById('meanValue').textContent = mean.toFixed(4);
+      document.getElementById('stdValue').textContent = std.toFixed(4);
+      document.getElementById('nValue').textContent = n;
+      document.getElementById('marginError').textContent = marginError.toFixed(4);
+
+      document.getElementById('ciResult').style.display = 'block';
+
+      // Update chart
+      const ctx = document.getElementById('ciChart').getContext('2d');
+
+      if (ciChartInstance) {
+        ciChartInstance.destroy();
+      }
+
+      const chartData = Array.from({ length: 100 }, (_, i) => {
+        const x = lowerBound + (upperBound - lowerBound) * i / 99;
+        const meanVal = mean;
+        const stdVal = std / Math.sqrt(n);
+        return Math.exp(-0.5 * Math.pow((x - meanVal) / stdVal, 2));
+      });
+
+      const labels = Array.from({ length: 100 }, (_, i) => {
+        return (lowerBound + (upperBound - lowerBound) * i / 99).toFixed(2);
+      });
+
+      ciChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: '正态分布',
+            data: chartData,
+            borderColor: 'rgba(33, 150, 243, 1)',
+            backgroundColor: 'rgba(33, 150, 243, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 0,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            },
+            title: {
+              display: true,
+              text: `置信区间可视化 (${cl}% 置信水平)`,
+            },
+          },
+          scales: {
+            y: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

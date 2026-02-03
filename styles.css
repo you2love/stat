@@ -20,10 +20,12 @@ body {
   padding: 0;
 }
 
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* 导航栏样式 */
@@ -52,15 +54,6 @@ body {
 .nav-link.active {
   background-color: var(--primary-color);
   color: var(--text-light) !important;
-}
-
-/* 主要内容区域 */
-.main-content {
-  flex: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 /* 页面标题 */
@@ -212,4 +205,103 @@ body {
   height: 100%;
   background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   transition: width 0.6s ease;
+}
+
+/* 首页特定样式 */
+.home-page .hero-section {
+  padding: 4rem 0;
+}
+
+.home-page .hero-buttons {
+  margin-top: 2rem;
+}
+
+/* 表单样式 */
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* 表格样式 */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+.table-bordered td, .table-bordered th {
+  border: 1px solid #dee2e6;
+}
+
+.table-danger {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.table-success {
+  background-color: rgba(40, 167, 69, 0.1) !important;
+}
+
+/* 警告框样式 */
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.alert-info {
+  background-color: rgba(33, 150, 243, 0.1);
+  color: var(--primary-color);
+}
+
+.alert-success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--accent-color);
+}
+
+.alert-danger {
+  background-color: rgba(255, 64, 129, 0.1);
+  color: var(--secondary-color);
+}
+
+/* 统计结果显示 */
+.stats-result {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-bg);
 }
