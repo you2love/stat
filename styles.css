@@ -305,3 +305,19 @@ body {
   font-weight: bold;
   color: var(--dark-bg);
 }
+
+/* 步骤流程样式 */
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1976D2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
