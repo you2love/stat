@@ -72,7 +72,8 @@
 
 /* Square root */
 .katex-sqrt {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .katex-sqrt > .katex-sqrt-root {
@@ -81,6 +82,25 @@
   border-left: 1px solid #000;
   padding-left: 0.15em;
   margin-left: 0.1em;
+}
+
+/* Nth root */
+.katex-nthroot {
+  display: inline-flex;
+  align-items: center;
+}
+
+.katex-nthroot-index {
+  font-size: 0.7em;
+  vertical-align: top;
+  margin-right: 0.1em;
+}
+
+.katex-nthroot-root {
+  display: inline-block;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  padding-left: 0.15em;
 }
 
 /* Delimiters */
@@ -110,4 +130,120 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.5em 0;
+}
+
+/* Text command */
+.katex-text {
+  font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+  font-style: normal;
+}
+
+/* Cases environment */
+.katex-cases {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  border-left: 2px solid #000;
+  padding-left: 0.5em;
+  margin-left: 0.5em;
+}
+
+.katex-case-row {
+  padding: 0.2em 0;
+  display: flex;
+  align-items: center;
+}
+
+.katex-case-condition {
+  flex: 1;
+}
+
+.katex-case-value {
+  margin-left: 0.5em;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Matrix styles */
+.katex-matrix {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.2em 0;
+  border-left: 2px solid #000;
+  padding-left: 0.5em;
+}
+
+.katex-matrix-dots {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* Binomial coefficient */
+.katex-binom {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 0.2em;
+  border-left: 1px solid #000;
+  padding-left: 0.2em;
+}
+
+.katex-binom-top,
+.katex-binom-bottom {
+  padding: 0 0.2em;
+}
+
+.katex-binom-bottom {
+  border-top: 1px solid #000;
+}
+
+/* Matrix */
+.katex-matrix {
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0.1em 0.3em;
+}
+
+.katex-matrix > br {
+  margin: 0.1em 0;
+}
+
+/* Operator */
+.katex-operator {
+  font-family: KaTeX_Main;
+  font-style: normal;
+  padding: 0 0.1em;
+}
+
+/* Parentheses and brackets */
+.katex-paren,
+.katex-bracket,
+.katex-brace {
+  font-family: KaTeX_Size1;
+  font-size: 1.1em;
+}
+
+/* Arrow symbols */
+.katex-symbol {
+  font-style: normal;
+}
+
+/* Superscript and subscript adjustments */
+.katex-op > .katex-superscript,
+.katex-op > .katex-subscript {
+  font-size: 0.7em;
+}
+
+/* Integral limits */
+.katex-op > .katex-subscript {
+  vertical-align: -0.4em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Summation limits */
+.katex-op.katex-symbol > .katex-subscript {
+  vertical-align: -0.4em;
+  margin-left: 0;
+  margin-right: 0;
 }

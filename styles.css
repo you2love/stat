@@ -156,12 +156,22 @@ body {
 
 /* 公式样式 */
 .formula-box {
-  background-color: #f8f9fa;
-  border-left: 4px solid var(--primary-color);
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 5px solid var(--primary-color);
+  padding: 1.5rem 2rem;
   margin: 1.5rem 0;
-  border-radius: 8px;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+
+.formula-box .katex-display {
+  margin: 0.5em 0 !important;
+}
+
+.formula-box .katex {
+  font-size: 1.1em !important;
 }
 
 /* 页脚 */

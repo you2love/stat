@@ -51,7 +51,7 @@
           <h4>完全随机设计</h4>
           <p>将实验对象随机分配到各个处理组，适用于同质总体。</p>
           <div class="formula-box">
-            $$H_0: \mu_1 = \mu_2 = \cdots = \mu_k$$
+            <span class="katex katex-display">H<sub class="katex-subscript">0</sub>: <span class="katex-symbol">μ</span><sub class="katex-subscript">1</sub> = <span class="katex-symbol">μ</span><sub class="katex-subscript">2</sub> = \cdots = <span class="katex-symbol">μ</span><sub class="katex-subscript">k</sub></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>简单药物测试、教学方法比较</p>
         </div>
@@ -66,7 +66,7 @@
           <h4>析因设计</h4>
           <p>同时研究多个因素及其交互作用。</p>
           <div class="formula-box">
-            $$Y = \mu + \alpha_i + \beta_j + (\alpha\beta)_{ij} + \varepsilon_{ijk}$$
+            <span class="katex katex-display">Y = <span class="katex-symbol">μ</span> + <span class="katex-symbol">α</span><sub class="katex-subscript">i</sub> + <span class="katex-symbol">β</span><sub class="katex-subscript">j</sub> + (<span class="katex-symbol">α</span><span class="katex-symbol">β</span>)<sub class="katex-subscript">ij</sub> + \varepsilon<sub class="katex-subscript">ijk</sub></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>多因素工艺优化、营销活动效果分析</p>
         </div>
@@ -81,7 +81,7 @@
           <h4>简单随机抽样 (SRS)</h4>
           <p>总体中每个个体被抽中的概率相同。</p>
           <div class="formula-box">
-            $$P(\text{个体}i \text{被选中}) = \frac{n}{N}$$
+            <span class="katex katex-display">P(<span class="katex-text">个体</span>i <span class="katex-text">被选中</span>) = <span class="katex-fraction"><span class="katex-numerator">n</span><span class="katex-denominator">N</span></span></span>
           </div>
           <p class="text-muted">其中 N 是总体大小，n 是样本大小。</p>
           <p class="text-muted"><strong>应用：</strong>彩票抽奖、小型调查、质量抽检</p>
@@ -91,9 +91,9 @@
           <h4>分层抽样</h4>
           <p>先将总体分成若干层，然后在每层内进行独立抽样。</p>
           <div class="formula-box">
-            $$\bar{y}_{str} = \sum_{h=1}^{H} \frac{N_h}{N} \bar{y}_h$$
+            <span class="katex katex-display"><span class="katex-symbol">ȳ</span><sub class="katex-subscript">str</sub> = <span class="katex-op">∑</span><sub class="katex-subscript">h=1</sub><sup class="katex-superscript">H</sup> <span class="katex-fraction"><span class="katex-numerator">N<sub class="katex-subscript">h</sub></span><span class="katex-denominator">N</span></span> <span class="katex-symbol">ȳ</span><sub class="katex-subscript">h</sub></span>
           </div>
-          <p class="text-muted">其中 H 是层数，$N_h$ 是第 h 层的大小，$\bar{y}_h$ 是第 h 层的样本均值。</p>
+          <p class="text-muted">其中 H 是层数，<span class="katex katex-inline">N<sub class="katex-subscript">h</sub></span> 是第 h 层的大小，<span class="katex katex-inline"><span class="katex-symbol">ȳ</span><sub class="katex-subscript">h</sub></span> 是第 h 层的样本均值。</p>
           <p class="text-muted"><strong>应用：</strong>全国性调查（按地区分层）、收入调查（按收入分层）</p>
         </div>
 
@@ -150,7 +150,7 @@
 
         <h3 class="mt-4 mb-3">1. 估计均值时的样本量</h3>
         <div class="formula-box">
-          $$n = \frac{Z^2 \sigma^2}{E^2}$$
+          <span class="katex katex-display">n = <span class="katex-fraction"><span class="katex-numerator">Z<sup class="katex-superscript">2</sup> <span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span><span class="katex-denominator">E<sup class="katex-superscript">2</sup></span></span></span>
         </div>
         <p class="text-muted">其中：</p>
         <ul>
@@ -161,18 +161,18 @@
 
         <h3 class="mt-4 mb-3">2. 估计比例时的样本量</h3>
         <div class="formula-box">
-          $$n = \frac{Z^2 p(1-p)}{E^2}$$
+          <span class="katex katex-display">n = <span class="katex-fraction"><span class="katex-numerator">Z<sup class="katex-superscript">2</sup> p(1-p)</span><span class="katex-denominator">E<sup class="katex-superscript">2</sup></span></span></span>
         </div>
         <p class="text-muted">其中 p 是总体比例（未知时用 p=0.5 使样本量最大）。</p>
 
         <h3 class="mt-4 mb-3">3. 假设检验时的样本量</h3>
         <div class="formula-box">
-          $$n = \frac{(Z_\alpha + Z_\beta)^2 \sigma^2}{\Delta^2}$$
+          <span class="katex katex-display">n = <span class="katex-fraction"><span class="katex-numerator">(Z_<span class="katex-symbol">α</span> + Z_<span class="katex-symbol">β</span>)<sup class="katex-superscript">2</sup> <span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span><span class="katex-denominator"><span class="katex-symbol">Δ</span><sup class="katex-superscript">2</sup></span></span></span>
         </div>
         <p class="text-muted">其中：</p>
         <ul>
-          <li>$Z_\alpha$ - 第一类错误的临界值</li>
-          <li>$Z_\beta$ - 第二类错误的临界值</li>
+          <li><span class="katex katex-inline">Z_<span class="katex-symbol">α</span></span> - 第一类错误的临界值</li>
+          <li><span class="katex katex-inline">Z_<span class="katex-symbol">β</span></span> - 第二类错误的临界值</li>
           <li>Δ - 要检测的差异大小</li>
         </ul>
       </div>
@@ -362,7 +362,7 @@
         }
         n = Math.ceil((Z * Z * sigma * sigma) / (E * E));
         document.getElementById('sampleSizeExplanation').textContent = 
-          `在 ${cl}% 置信水平下，要使估计均值的误差不超过 ±${E}，需要 ${n} 个样本。`;
+          `在 <span class="katex katex-inline">{cl}% 置信水平下，要使估计均值的误差不超过 ±</span>{E}，需要 <span class="katex katex-inline">{n} 个样本。`;
       } else {
         const pInput = document.getElementById('populationProportion').value;
         const p = pInput === '' ? 0.5 : parseFloat(pInput);
@@ -372,7 +372,7 @@
         }
         n = Math.ceil((Z * Z * p * (1 - p)) / (E * E));
         document.getElementById('sampleSizeExplanation').textContent = 
-          `在 ${cl}% 置信水平下，要使估计比例的误差不超过 ±${E}%，需要 ${n} 个样本。`;
+          `在 </span>{cl}% 置信水平下，要使估计比例的误差不超过 ±<span class="katex katex-inline">{E}%，需要 </span>{n} 个样本。`;
       }
 
       document.getElementById('requiredSampleSize').textContent = n;
@@ -382,8 +382,8 @@
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
+          {left: '<span class="katex katex-display">', right: '</span>', display: true},
+          {left: '<span class="katex katex-inline">', right: '</span>', display: false}
         ]
       });
     });

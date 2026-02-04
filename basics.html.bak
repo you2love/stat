@@ -31,9 +31,9 @@
           <h4>均值 (Mean)</h4>
           <p>均值是所有数据的总和除以数据的数量。</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">x̄</span> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> x<sub class="katex-subscript">i</sub></span><span class="katex-denominator">n</span></span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">x̄</span> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> x<sub class="katex-subscript">i</sub></span><span class="katex-denominator">n</span></span></span>
           </div>
-          <p class="text-muted">其中 <span class="katex katex-inline"><span class="katex-symbol">x̄</span></span></span> 是均值，<span class="katex katex-inline">x<sub class="katex-subscript">i</sub></span> 是每个数据点，<span class="katex katex-inline">n</span> 是数据总数。</p>
+          <p class="text-muted">其中 <span class="katex katex-inline"><span class="katex-symbol">x̄</span></span> 是均值，<span class="katex katex-inline">x<sub class="katex-subscript">i</sub></span> 是每个数据点，<span class="katex katex-inline">n</span> 是数据总数。</p>
         </div>
 
         <div class="mb-4">
@@ -52,7 +52,7 @@
           <h4>方差 (Variance)</h4>
           <p>方差衡量数据点与均值的偏离程度。</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> (x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></span><span class="katex-denominator">n</span></span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> (x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></span><span class="katex-denominator">n</span></span></span>
           </div>
         </div>
 
@@ -60,7 +60,7 @@
           <h4>标准差 (Standard Deviation)</h4>
           <p>标准差是方差的平方根，与数据具有相同的单位。</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">σ</span> = <span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span></span><sup class="katex-superscript">n</sub> (x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></sup>{n}}</span>
+            <span class="katex katex-display"><span class="katex-symbol">σ</span> = <span class="katex-sqrt"><span class="katex-sqrt-root">\frac{<span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span><sup class="katex-superscript">n</sub> (x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></sup>{n}}</span>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
           <h4>几何平均数 (Geometric Mean)</h4>
           <p>n 个正数的乘积的 n 次方根。</p>
           <div class="formula-box">
-            <span class="katex katex-display">G = <span class="katex-nthroot"><span class="katex-nthroot-index">n</span><span class="katex-nthroot-root">x<sub class="katex-subscript">1</sub> <span class="katex-symbol">×</span> x<sub class="katex-subscript">2</sub> <span class="katex-symbol">×</span> \cdots <span class="katex-symbol">×</span> x<sub class="katex-subscript">n</sub></span></span></span></span>
+            <span class="katex katex-display">G = <span class="katex-nthroot"><span class="katex-nthroot-index">n</span><span class="katex-nthroot-root">x<sub class="katex-subscript">1</sub> <span class="katex-symbol">×</span> x<sub class="katex-subscript">2</sub> <span class="katex-symbol">×</span> \cdots <span class="katex-symbol">×</span> x<sub class="katex-subscript">n</sub></span></span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>计算平均增长率（如 GDP 增长、投资回报率）、比率数据的平均值</p>
         </div>
@@ -100,7 +100,7 @@
           <h4>调和平均数 (Harmonic Mean)</h4>
           <p>数值倒数的算术平均数的倒数。</p>
           <div class="formula-box">
-            <span class="katex katex-display">H = <span class="katex-fraction"><span class="katex-numerator">n</span><span class="katex-denominator"><span class="katex-fraction"><span class="katex-numerator">1</span></span></span>{x<sub class="katex-subscript">1</sub>} + <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x<sub class="katex-subscript">2</sub></span></span></span> + \cdots + <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x<sub class="katex-subscript">n</sub></span></span></span>}</span>
+            <span class="katex katex-display">H = <span class="katex-fraction"><span class="katex-numerator">n</span><span class="katex-denominator">\frac{1</span></span>{x<sub class="katex-subscript">1</sub>} + <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x<sub class="katex-subscript">2</sub></span></span> + \cdots + <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x<sub class="katex-subscript">n</sub></span></span>}</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>计算平均速率（如往返行程）、平均价格（固定预算下）、F-score 评价指标</p>
         </div>
@@ -129,7 +129,7 @@
           <h4>变异系数 (Coefficient of Variation, CV)</h4>
           <p>标准差与均值的比值，用百分比表示。</p>
           <div class="formula-box">
-            <span class="katex katex-display">CV = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span></span><span class="katex-denominator"><span class="katex-symbol">μ</span></span></span></span> <span class="katex-symbol">×</span> 100\%</span>
+            <span class="katex katex-display">CV = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span><span class="katex-denominator"><span class="katex-symbol">μ</span></span></span> <span class="katex-symbol">×</span> 100\%</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>比较不同量纲数据的离散程度（如身高与体重）、风险评估、投资组合比较</p>
         </div>
@@ -138,7 +138,7 @@
           <h4>平均绝对偏差 (Mean Absolute Deviation, MAD)</h4>
           <p>每个数据点与均值之差的绝对值的平均。</p>
           <div class="formula-box">
-            <span class="katex katex-display">MAD = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>|x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>|</span>
+            <span class="katex katex-display">MAD = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>|x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>|</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>需求预测误差评估、稳健的离散程度度量、异常检测</p>
         </div>
@@ -173,7 +173,7 @@
           <h4>标准分数 (Z-Score)</h4>
           <p>表示一个数值与均值之间的距离，以标准差为单位。</p>
           <div class="formula-box">
-            <span class="katex katex-display">z = <span class="katex-fraction"><span class="katex-numerator">x - <span class="katex-symbol">μ</span></span></span><span class="katex-denominator"><span class="katex-symbol">σ</span></span></span></span></span></span>
+            <span class="katex katex-display">z = <span class="katex-fraction"><span class="katex-numerator">x - <span class="katex-symbol">μ</span></span><span class="katex-denominator"><span class="katex-symbol">σ</span></span></span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>考试成绩标准化比较、异常值检测（|z| > 3）、机器学习特征标准化</p>
         </div>
@@ -195,7 +195,7 @@
           <h4>协方差 (Covariance)</h4>
           <p>衡量两个变量一起变化的程度。</p>
           <div class="formula-box">
-            <span class="katex katex-display">Cov(X,Y) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)</span>
+            <span class="katex katex-display">Cov(X,Y) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)</span>
           </div>
           <ul>
             <li>正值：正相关（一个变量增加，另一个也增加）</li>
@@ -209,7 +209,7 @@
           <h4>皮尔逊相关系数 (Pearson Correlation Coefficient)</h4>
           <p>衡量两个变量之间的线性相关强度，取值范围 [-1, 1]。</p>
           <div class="formula-box">
-            <span class="katex katex-display">r = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span></span><sup class="katex-superscript">n</sub>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></sup><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span></span><sup class="katex-superscript">n</sub>(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)<sup class="katex-superscript">2</sup></sup></span></span></span></span>
+            <span class="katex katex-display">r = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span><sup class="katex-superscript">n</sub>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></sup><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</span></span><sup class="katex-superscript">n</sub>(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)<sup class="katex-superscript">2</sup></sup></span></span></span>
           </div>
           <ul>
             <li>r = 1：完全正相关</li>
@@ -254,7 +254,7 @@
           <h4>标准误差 (Standard Error, SE)</h4>
           <p>样本统计量的标准差，用于衡量抽样误差的大小。</p>
           <div class="formula-box">
-            <span class="katex katex-display">SE = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span></span></span>
+            <span class="katex katex-display">SE = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>置信区间计算、假设检验、样本量确定</p>
         </div>
@@ -281,7 +281,7 @@
           <h4>k 阶原点矩</h4>
           <p>描述随机变量关于原点的分布特征：</p>
           <div class="formula-box">
-            <span class="katex katex-display">m<sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>x<sub class="katex-subscript">i</sub><sup class="katex-superscript">k</sup></span>
+            <span class="katex katex-display">m<sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>x<sub class="katex-subscript">i</sub><sup class="katex-superscript">k</sup></span>
           </div>
           <p class="text-muted">k=1 时为均值，k=2 时为原点二阶矩。</p>
         </div>
@@ -290,7 +290,7 @@
           <h4>k 阶中心矩</h4>
           <p>描述随机变量关于均值的分布特征：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">μ</span><sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">k</sup></span>
+            <span class="katex katex-display"><span class="katex-symbol">μ</span><sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">k</sup></span>
           </div>
           <ul>
             <li>k=2：方差</li>
@@ -304,7 +304,7 @@
           <h4>样本矩与总体矩</h4>
           <p>样本矩用于估计总体矩，是矩估计法的基础：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">m̂</span><sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>X<sub class="katex-subscript">i</sub><sup class="katex-superscript">k</sup> \xrightarrow{P} E[X<sup class="katex-superscript">k</sup>]</span>
+            <span class="katex katex-display"><span class="katex-symbol">m̂</span><sub class="katex-subscript">k</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>X<sub class="katex-subscript">i</sub><sup class="katex-superscript">k</sup> \xrightarrow{P} E[X<sup class="katex-superscript">k</sup>]</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>参数估计、分布拟合、统计推断</p>
         </div>
@@ -346,7 +346,7 @@
           <h4>经验累积分布函数 (ECDF)</h4>
           <p>基于样本数据的累积分布函数估计：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">F̂</span><sub class="katex-subscript">n</sub>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>I(x<sub class="katex-subscript">i</sub> <span class="katex-symbol">≤</span> x)</span>
+            <span class="katex katex-display"><span class="katex-symbol">F̂</span><sub class="katex-subscript">n</sub>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>I(x<sub class="katex-subscript">i</sub> <span class="katex-symbol">≤</span> x)</span>
           </div>
           <p class="text-muted">其中 I(·) 是指示函数。</p>
           <p class="text-muted"><strong>性质：</strong></p>
@@ -383,7 +383,7 @@
           <h4>直方图密度估计</h4>
           <p>最简单的密度估计方法：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">f̂</span>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">nh</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>I<span class="katex-paren">(</span><span class="katex-fraction"><span class="katex-numerator">x<sub class="katex-subscript">i</sub> - x</span><span class="katex-denominator">h</span></span></span> <span class="katex-symbol">≤</span> <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">2</span></span></span><span class="katex-paren">)</span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">f̂</span>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">nh</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>I<span class="katex-paren">(</span><span class="katex-fraction"><span class="katex-numerator">x<sub class="katex-subscript">i</sub> - x</span><span class="katex-denominator">h</span></span> <span class="katex-symbol">≤</span> <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">2</span></span><span class="katex-paren">)</span></span>
           </div>
           <p class="text-muted">其中 h 是带宽（箱宽），n 是样本量。</p>
           <p class="text-muted"><strong>缺点：</strong>不连续，受带宽选择影响大</p>
@@ -393,12 +393,12 @@
           <h4>核密度估计 (Kernel Density Estimation, KDE)</h4>
           <p>使用核函数平滑直方图：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">f̂</span><sub class="katex-subscript">h</sub>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">nh</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>K<span class="katex-paren">(</span><span class="katex-fraction"><span class="katex-numerator">x - x<sub class="katex-subscript">i</sub></span><span class="katex-denominator">h</span></span></span><span class="katex-paren">)</span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">f̂</span><sub class="katex-subscript">h</sub>(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">nh</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>K<span class="katex-paren">(</span><span class="katex-fraction"><span class="katex-numerator">x - x<sub class="katex-subscript">i</sub></span><span class="katex-denominator">h</span></span><span class="katex-paren">)</span></span>
           </div>
           <p class="text-muted"><strong>常用核函数：</strong></p>
           <ul>
-            <li>高斯核：<span class="katex katex-inline">K(u) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">2<span class="katex-symbol">π</span></span></span></span></span></span></span>e<sup class="katex-superscript">-u<sup class="katex-superscript">2</sup>/2</sup></span></li>
-            <li>Epanechnikov 核：<span class="katex katex-inline">K(u) = <span class="katex-fraction"><span class="katex-numerator">3</span><span class="katex-denominator">4</span></span></span>(1-u<sup class="katex-superscript">2</sup>)</span> for |u| ≤ 1</li>
+            <li>高斯核：<span class="katex katex-inline">K(u) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">2<span class="katex-symbol">π</span></span></span></span></span>e<sup class="katex-superscript">-u<sup class="katex-superscript">2</sup>/2</sup></span></li>
+            <li>Epanechnikov 核：<span class="katex katex-inline">K(u) = <span class="katex-fraction"><span class="katex-numerator">3</span><span class="katex-denominator">4</span></span>(1-u<sup class="katex-superscript">2</sup>)</span> for |u| ≤ 1</li>
             <li>三角核：<span class="katex katex-inline">K(u) = 1 - |u|</span> for |u| ≤ 1</li>
           </ul>
           <p class="text-muted"><strong>带宽选择：</strong></p>
@@ -415,7 +415,7 @@
           <h4>Box-Cox 变换</h4>
           <p>用于使数据更接近正态分布：</p>
           <div class="formula-box">
-            <span class="katex katex-display">y(<span class="katex-symbol">λ</span>) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">x^<span class="katex-symbol">λ</span> - 1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 0</span></span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-operator">ln</span>(x)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 0</span></span></span></span></span></span>
+            <span class="katex katex-display">y(<span class="katex-symbol">λ</span>) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">x^<span class="katex-symbol">λ</span> - 1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 0</span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-operator">ln</span>(x)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 0</span></span></span></span>
           </div>
           <p class="text-muted"><strong>参数选择：</strong>通过最大似然估计选择 λ</p>
           <p class="text-muted"><strong>应用：</strong>方差稳定化、正态化、回归分析预处理</p>
@@ -425,7 +425,7 @@
           <h4>Yeo-Johnson 变换</h4>
           <p>Box-Cox 变换的扩展，允许负值：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">ψ</span>(y,<span class="katex-symbol">λ</span>) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">(y+1)^<span class="katex-symbol">λ</span> - 1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 0, y <span class="katex-symbol">≥</span> 0</span></span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-operator">ln</span>(y+1)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 0, y <span class="katex-symbol">≥</span> 0</span></span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">(-y+1)<sup class="katex-superscript">2-<span class="katex-symbol">λ</span></sup> - 1</span><span class="katex-denominator">2-<span class="katex-symbol">λ</span></span></span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 2, y < 0</span></span></span><span class="katex-case-row"><span class="katex-case-condition">-<span class="katex-operator">ln</span>(-y+1)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 2, y < 0</span></span></span></span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">ψ</span>(y,<span class="katex-symbol">λ</span>) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">(y+1)^<span class="katex-symbol">λ</span> - 1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 0, y <span class="katex-symbol">≥</span> 0</span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-operator">ln</span>(y+1)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 0, y <span class="katex-symbol">≥</span> 0</span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">(-y+1)<sup class="katex-superscript">2-<span class="katex-symbol">λ</span></sup> - 1</span><span class="katex-denominator">2-<span class="katex-symbol">λ</span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> <span class="katex-symbol">≠</span> 2, y < 0</span></span><span class="katex-case-row"><span class="katex-case-condition">-<span class="katex-operator">ln</span>(-y+1)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 2, y < 0</span></span></span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>处理含负值数据、机器学习特征工程</p>
         </div>
@@ -446,7 +446,7 @@
           <h4>均值向量</h4>
           <p>多元数据的中心位置：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">\mathbf{x̄</span>} = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>\mathbf{x}<sub class="katex-subscript">i</sub> = <span class="katex-matrix">(<span class="katex-symbol">x̄</span><sub class="katex-subscript">1</sub><br><span class="katex-symbol">x̄</span><sub class="katex-subscript">2</sub><br>\vdots<br><span class="katex-symbol">x̄</span><sub class="katex-subscript">p</sub>)</span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">\mathbf{x̄</span>} = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>\mathbf{x}<sub class="katex-subscript">i</sub> = <span class="katex-matrix">(<span class="katex-symbol">x̄</span><sub class="katex-subscript">1</sub><br><span class="katex-symbol">x̄</span><sub class="katex-subscript">2</sub><br>\vdots<br><span class="katex-symbol">x̄</span><sub class="katex-subscript">p</sub>)</span></span>
           </div>
         </div>
 
@@ -454,18 +454,18 @@
           <h4>协方差矩阵</h4>
           <p>描述变量间的协方差结构：</p>
           <div class="formula-box">
-            <span class="katex katex-display">\mathbf{S} = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>})(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>})<sup class="katex-superscript">T</sup> = <span class="katex-matrix">(s<sub class="katex-subscript">11</sub>&nbsp;&nbsp;s<sub class="katex-subscript">12</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">1p</sub><br>s<sub class="katex-subscript">21</sub>&nbsp;&nbsp;s<sub class="katex-subscript">22</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">2p</sub><br>\vdots&nbsp;&nbsp;\vdots&nbsp;&nbsp;\ddots&nbsp;&nbsp;\vdots<br>s<sub class="katex-subscript">p1</sub>&nbsp;&nbsp;s<sub class="katex-subscript">p2</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">pp</sub>)</span></span></span>
+            <span class="katex katex-display">\mathbf{S} = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>})(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>})<sup class="katex-superscript">T</sup> = <span class="katex-matrix">(s<sub class="katex-subscript">11</sub>&nbsp;&nbsp;s<sub class="katex-subscript">12</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">1p</sub><br>s<sub class="katex-subscript">21</sub>&nbsp;&nbsp;s<sub class="katex-subscript">22</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">2p</sub><br>\vdots&nbsp;&nbsp;\vdots&nbsp;&nbsp;\ddots&nbsp;&nbsp;\vdots<br>s<sub class="katex-subscript">p1</sub>&nbsp;&nbsp;s<sub class="katex-subscript">p2</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;s<sub class="katex-subscript">pp</sub>)</span></span>
           </div>
-          <p class="text-muted">其中 <span class="katex katex-inline">s<sub class="katex-subscript">jk</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">ij</sub> - <span class="katex-symbol">x̄</span><sub class="katex-subscript">j</sub>)(x<sub class="katex-subscript">ik</sub> - <span class="katex-symbol">x̄</span><sub class="katex-subscript">k</sub>)</span></p>
+          <p class="text-muted">其中 <span class="katex katex-inline">s<sub class="katex-subscript">jk</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">ij</sub> - <span class="katex-symbol">x̄</span><sub class="katex-subscript">j</sub>)(x<sub class="katex-subscript">ik</sub> - <span class="katex-symbol">x̄</span><sub class="katex-subscript">k</sub>)</span></p>
         </div>
 
         <div class="mb-4">
           <h4>相关矩阵</h4>
           <p>描述变量间的相关性：</p>
           <div class="formula-box">
-            <span class="katex katex-display">\mathbf{R} = <span class="katex-matrix">(1&nbsp;&nbsp;r<sub class="katex-subscript">12</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;r<sub class="katex-subscript">1p</sub><br>r<sub class="katex-subscript">21</sub>&nbsp;&nbsp;1&nbsp;&nbsp;\cdots&nbsp;&nbsp;r<sub class="katex-subscript">2p</sub><br>\vdots&nbsp;&nbsp;\vdots&nbsp;&nbsp;\ddots&nbsp;&nbsp;\vdots<br>r<sub class="katex-subscript">p1</sub>&nbsp;&nbsp;r<sub class="katex-subscript">p2</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;1)</span></span></span>
+            <span class="katex katex-display">\mathbf{R} = <span class="katex-matrix">(1&nbsp;&nbsp;r<sub class="katex-subscript">12</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;r<sub class="katex-subscript">1p</sub><br>r<sub class="katex-subscript">21</sub>&nbsp;&nbsp;1&nbsp;&nbsp;\cdots&nbsp;&nbsp;r<sub class="katex-subscript">2p</sub><br>\vdots&nbsp;&nbsp;\vdots&nbsp;&nbsp;\ddots&nbsp;&nbsp;\vdots<br>r<sub class="katex-subscript">p1</sub>&nbsp;&nbsp;r<sub class="katex-subscript">p2</sub>&nbsp;&nbsp;\cdots&nbsp;&nbsp;1)</span></span>
           </div>
-          <p class="text-muted">其中 <span class="katex katex-inline">r<sub class="katex-subscript">jk</sub> = <span class="katex-fraction"><span class="katex-numerator">s<sub class="katex-subscript">jk</sub></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">s<sub class="katex-subscript">jj</span></span></span>s<sub class="katex-subscript">kk</sub></span></span></span></sub></span></p>
+          <p class="text-muted">其中 <span class="katex katex-inline">r<sub class="katex-subscript">jk</sub> = <span class="katex-fraction"><span class="katex-numerator">s<sub class="katex-subscript">jk</sub></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">s<sub class="katex-subscript">jj</span></span>s<sub class="katex-subscript">kk</sub></span></span></sub></span></p>
           <p class="text-muted"><strong>应用：</strong>主成分分析、因子分析、多重共线性诊断</p>
         </div>
 
@@ -504,7 +504,7 @@
           <h4>截尾均值 (Trimmed Mean)</h4>
           <p>去除一定比例极值后的均值：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">x̄</span><sub class="katex-subscript"><span class="katex-symbol">α</span></sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n(1-2<span class="katex-symbol">α</span>)</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=k+1</sub><sup class="katex-superscript">n-k</sup>x<sub class="katex-subscript">(i)</sub></span>
+            <span class="katex katex-display"><span class="katex-symbol">x̄</span><sub class="katex-subscript"><span class="katex-symbol">α</span></sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n(1-2<span class="katex-symbol">α</span>)</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=k+1</sub><sup class="katex-superscript">n-k</sup>x<sub class="katex-subscript">(i)</sub></span>
           </div>
           <p class="text-muted">其中 <span class="katex katex-inline">k = \lfloor <span class="katex-symbol">α</span> n \rfloor</span>，<span class="katex katex-inline">x<sub class="katex-subscript">(i)</sub></span> 是有序样本。</p>
           <p class="text-muted"><strong>应用：</strong>体育比赛评分（去除最高最低分）、收入数据分析</p>
@@ -514,7 +514,7 @@
           <h4>Winsorized 均值</h4>
           <p>将极值替换为边界值后的均值：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">x̄</span><sub class="katex-subscript">w</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-paren">(</span>kx<sub class="katex-subscript">(k+1)</sub> + <span class="katex-op">∑</span><sub class="katex-subscript">i=k+1</sub><sup class="katex-superscript">n-k</sup>x<sub class="katex-subscript">(i)</sub> + kx<sub class="katex-subscript">(n-k)</sub><span class="katex-paren">)</span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">x̄</span><sub class="katex-subscript">w</sub> = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-paren">(</span>kx<sub class="katex-subscript">(k+1)</sub> + <span class="katex-op">∑</span><sub class="katex-subscript">i=k+1</sub><sup class="katex-superscript">n-k</sup>x<sub class="katex-subscript">(i)</sub> + kx<sub class="katex-subscript">(n-k)</sub><span class="katex-paren">)</span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>稳健的集中趋势估计、金融数据分析</p>
         </div>
@@ -525,7 +525,7 @@
           <h4>自协方差函数</h4>
           <p>衡量时间序列在不同时滞下的相关性：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">γ</span>(k) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span></span><span class="katex-op">∑</span><sub class="katex-subscript">t=k+1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)(x<sub class="katex-subscript">t-k</sub> - <span class="katex-symbol">x̄</span>)</span>
+            <span class="katex katex-display"><span class="katex-symbol">γ</span>(k) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n</span></span><span class="katex-op">∑</span><sub class="katex-subscript">t=k+1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)(x<sub class="katex-subscript">t-k</sub> - <span class="katex-symbol">x̄</span>)</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>时间序列分析、季节性检测</p>
         </div>
@@ -534,7 +534,7 @@
           <h4>自相关函数 (ACF)</h4>
           <p>标准化的自协方差：</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">ρ</span>(k) = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">γ</span>(k)</span><span class="katex-denominator"><span class="katex-symbol">γ</span>(0)</span></span></span> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">t=k+1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)(x<sub class="katex-subscript">t-k</sub> - <span class="katex-symbol">x̄</span>)</span><span class="katex-denominator"><span class="katex-op">∑</span><sub class="katex-subscript">t=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></span></span></span></span>
+            <span class="katex katex-display"><span class="katex-symbol">ρ</span>(k) = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">γ</span>(k)</span><span class="katex-denominator"><span class="katex-symbol">γ</span>(0)</span></span> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">t=k+1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)(x<sub class="katex-subscript">t-k</sub> - <span class="katex-symbol">x̄</span>)</span><span class="katex-denominator"><span class="katex-op">∑</span><sub class="katex-subscript">t=1</sub><sup class="katex-superscript">n</sup>(x<sub class="katex-subscript">t</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></span></span></span>
           </div>
           <p class="text-muted"><strong>应用：</strong>自相关检验、模型识别（ARIMA）</p>
         </div>

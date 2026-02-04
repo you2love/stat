@@ -21,7 +21,7 @@
           0 表示不可能发生，1 表示必然发生。概率论是研究随机现象的数学理论。
         </p>
         <div class="formula-box">
-          $$P(A) = \frac{\text{事件A发生的有利结果数}}{\text{所有可能结果的总数}}$$
+          <span class="katex katex-display">P(A) = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-text">事件A发生的有利结果数</span></span><span class="katex-denominator"><span class="katex-text">所有可能结果的总数</span></span></span></span>
         </div>
       </div>
 
@@ -33,16 +33,16 @@
           条件概率是在已知事件 B 发生的条件下，事件 A 发生的概率。
         </p>
         <div class="formula-box">
-          $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+          <span class="katex katex-display">P(A|B) = <span class="katex-fraction"><span class="katex-numerator">P(A <span class="katex-symbol">∩</span> B)</span><span class="katex-denominator">P(B)</span></span></span>
         </div>
-        <p class="text-muted">其中 $P(A|B)$ 表示在 B 发生的条件下 A 发生的概率。</p>
+        <p class="text-muted">其中 <span class="katex katex-inline">P(A|B)</span> 表示在 B 发生的条件下 A 发生的概率。</p>
 
         <h3 class="mt-4 mb-3">2. 乘法定理</h3>
         <p>
           两个事件同时发生的概率等于一个事件的概率乘以在该事件发生的条件下另一个事件的概率。
         </p>
         <div class="formula-box">
-          $$P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)$$
+          <span class="katex katex-display">P(A <span class="katex-symbol">∩</span> B) = P(A) <span class="katex-symbol">×</span> P(B|A) = P(B) <span class="katex-symbol">×</span> P(A|B)</span>
         </div>
 
         <h3 class="mt-4 mb-3">3. 贝叶斯定理</h3>
@@ -50,15 +50,15 @@
           贝叶斯定理描述了条件概率之间的关系，是统计推断的重要工具。
         </p>
         <div class="formula-box">
-          $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+          <span class="katex katex-display">P(A|B) = <span class="katex-fraction"><span class="katex-numerator">P(B|A) <span class="katex-symbol">×</span> P(A)</span><span class="katex-denominator">P(B)</span></span></span>
         </div>
         <p class="text-muted">
           其中：
         </p>
         <ul>
-          <li>$P(A)$ - 先验概率（在考虑 B 之前 A 的概率）</li>
-          <li>$P(B|A)$ - 似然度（在 A 发生的条件下 B 发生的概率）</li>
-          <li>$P(A|B)$ - 后验概率（在观察到 B 之后 A 的概率）</li>
+          <li><span class="katex katex-inline">P(A)</span> - 先验概率（在考虑 B 之前 A 的概率）</li>
+          <li><span class="katex katex-inline">P(B|A)</span> - 似然度（在 A 发生的条件下 B 发生的概率）</li>
+          <li><span class="katex katex-inline">P(A|B)</span> - 后验概率（在观察到 B 之后 A 的概率）</li>
         </ul>
       </div>
 
@@ -68,10 +68,10 @@
         <h3 class="mt-4 mb-3">1. 概率公理</h3>
         <p>柯尔莫哥洛夫概率公理是现代概率论的基石：</p>
         <ul>
-          <li><strong>非负性：</strong>对任意事件 A，$P(A) \geq 0$</li>
-          <li><strong>规范性：</strong>$P(\Omega) = 1$，其中 $\Omega$ 是样本空间</li>
-          <li><strong>可列可加性：</strong>对于可数个互不相容的事件 $A_1, A_2, \ldots$，
-          $$P(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)$$
+          <li><strong>非负性：</strong>对任意事件 A，<span class="katex katex-inline">P(A) <span class="katex-symbol">≥</span> 0</span></li>
+          <li><strong>规范性：</strong><span class="katex katex-inline">P(<span class="katex-symbol">Ω</span>) = 1</span>，其中 <span class="katex katex-inline"><span class="katex-symbol">Ω</span></span> 是样本空间</li>
+          <li><strong>可列可加性：</strong>对于可数个互不相容的事件 <span class="katex katex-inline">A<sub class="katex-subscript">1</sub>, A<sub class="katex-subscript">2</sub>, \ldots</span>，
+          <span class="katex katex-display">P(\bigcup<sub class="katex-subscript">i=1</sub><sup class="katex-superscript"><span class="katex-symbol">∞</span></sup> A<sub class="katex-subscript">i</sub>) = <span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript"><span class="katex-symbol">∞</span></sup> P(A<sub class="katex-subscript">i</sub>)</span>
           </li>
         </ul>
 
@@ -81,7 +81,7 @@
           <h4>对立事件</h4>
           <p>事件 A 不发生的概率</p>
           <div class="formula-box">
-            $$P(A^c) = 1 - P(A)$$
+            <span class="katex katex-display">P(A<sup class="katex-superscript">c</sup>) = 1 - P(A)</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>计算"至少一次"的概率、风险评估</p>
         </div>
@@ -90,16 +90,16 @@
           <h4>加法公式</h4>
           <p>两个事件至少有一个发生的概率</p>
           <div class="formula-box">
-            $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+            <span class="katex katex-display">P(A <span class="katex-symbol">∪</span> B) = P(A) + P(B) - P(A <span class="katex-symbol">∩</span> B)</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>计算重叠事件的概率、市场渗透率分析</p>
         </div>
 
         <div class="mb-4">
           <h4>互斥事件（不相容事件）</h4>
-          <p>两个事件不能同时发生，即 $A \cap B = \emptyset$</p>
+          <p>两个事件不能同时发生，即 <span class="katex katex-inline">A <span class="katex-symbol">∩</span> B = \emptyset</span></p>
           <div class="formula-box">
-            $$P(A \cup B) = P(A) + P(B)$$
+            <span class="katex katex-display">P(A <span class="katex-symbol">∪</span> B) = P(A) + P(B)</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>互斥投资组合、排他性选项分析</p>
         </div>
@@ -108,8 +108,8 @@
           <h4>独立事件</h4>
           <p>一个事件的发生不影响另一个事件的概率</p>
           <div class="formula-box">
-            $$P(A \cap B) = P(A) \times P(B)$$
-            $$P(A|B) = P(A)$$
+            <span class="katex katex-display">P(A <span class="katex-symbol">∩</span> B) = P(A) <span class="katex-symbol">×</span> P(B)</span>
+            <span class="katex katex-display">P(A|B) = P(A)</span>
           </div>
           <p class="text-muted"><strong>应用：</strong>独立试验、系统可靠性分析、加密安全性</p>
         </div>
@@ -119,16 +119,16 @@
         <h2 class="card-title">🔢 全概率公式与贝叶斯公式</h2>
 
         <h3 class="mt-4 mb-3">1. 全概率公式</h3>
-        <p>如果事件 $B_1, B_2, \ldots, B_n$ 构成一个完备事件组（互斥且并集为样本空间），则：</p>
+        <p>如果事件 <span class="katex katex-inline">B<sub class="katex-subscript">1</sub>, B<sub class="katex-subscript">2</sub>, \ldots, B<sub class="katex-subscript">n</sub></span> 构成一个完备事件组（互斥且并集为样本空间），则：</p>
         <div class="formula-box">
-          $$P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)$$
+          <span class="katex katex-display">P(A) = <span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> P(A|B<sub class="katex-subscript">i</sub>) <span class="katex-symbol">×</span> P(B<sub class="katex-subscript">i</sub>)</span>
         </div>
         <p class="text-muted"><strong>应用：</strong>分层抽样、多源风险评估、决策树分析</p>
 
         <h3 class="mt-4 mb-3">2. 贝叶斯定理的完整形式</h3>
         <p>利用全概率公式，贝叶斯定理可表示为：</p>
         <div class="formula-box">
-          $$P(B_i|A) = \frac{P(A|B_i) \times P(B_i)}{\sum_{j=1}^{n} P(A|B_j) \times P(B_j)}$$
+          <span class="katex katex-display">P(B<sub class="katex-subscript">i</sub>|A) = <span class="katex-fraction"><span class="katex-numerator">P(A|B<sub class="katex-subscript">i</sub>) <span class="katex-symbol">×</span> P(B<sub class="katex-subscript">i</sub>)</span><span class="katex-denominator"><span class="katex-op">∑</span><sub class="katex-subscript">j=1</span></span><sup class="katex-superscript">n</sub> P(A|B<sub class="katex-subscript">j</sub>) <span class="katex-symbol">×</span> P(B<sub class="katex-subscript">j</sub>)</sup></span>
         </div>
         <p class="text-muted"><strong>应用：</strong>垃圾邮件过滤、医疗诊断、模式识别、机器学习分类算法</p>
       </div>
@@ -146,72 +146,66 @@
         <h3 class="mt-4 mb-3">2. 概率质量函数 (PMF)</h3>
         <p>离散型随机变量取各值的概率：</p>
         <div class="formula-box">
-          $$p_X(x) = P(X = x)$$
+          <span class="katex katex-display">p<sub class="katex-subscript">X</sub>(x) = P(X = x)</span>
         </div>
-        <p class="text-muted"><strong>性质：</strong>$\sum_x p_X(x) = 1$</p>
+        <p class="text-muted"><strong>性质：</strong><span class="katex katex-inline"><span class="katex-op">∑</span><sub class="katex-subscript">x</sub> p<sub class="katex-subscript">X</sub>(x) = 1</span></p>
 
         <h3 class="mt-4 mb-3">3. 概率密度函数 (PDF)</h3>
         <p>连续型随机变量的密度函数：</p>
         <div class="formula-box">
-          $$P(a \leq X \leq b) = \int_a^b f_X(x) dx$$
-          $$\int_{-\infty}^{\infty} f_X(x) dx = 1$$
+          <span class="katex katex-display">P(a <span class="katex-symbol">≤</span> X <span class="katex-symbol">≤</span> b) = <span class="katex-op">∫</span><sub class="katex-subscript">a</sub><sup class="katex-superscript">b</sup> f<sub class="katex-subscript">X</sub>(x) dx</span>
+          <span class="katex katex-display"><span class="katex-op">∫</span><sub class="katex-subscript">-<span class="katex-symbol">∞</span></sub><sup class="katex-superscript"><span class="katex-symbol">∞</span></sup> f<sub class="katex-subscript">X</sub>(x) dx = 1</span>
         </div>
 
         <h3 class="mt-4 mb-3">4. 累积分布函数 (CDF)</h3>
         <p>随机变量小于或等于某个值的概率：</p>
         <div class="formula-box">
-          $$F_X(x) = P(X \leq x) = \begin{cases}
-          \sum_{t \leq x} p_X(t) & \text{离散型} \\
-          \int_{-\infty}^{x} f_X(t) dt & \text{连续型}
-          \end{cases}$$
+          <span class="katex katex-display">F<sub class="katex-subscript">X</sub>(x) = P(X <span class="katex-symbol">≤</span> x) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-op">∑</span><sub class="katex-subscript">t <span class="katex-symbol">≤</span> x</sub> p<sub class="katex-subscript">X</sub>(t)</span><span class="katex-case-value"><span class="katex-text">离散型</span></span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-op">∫</span><sub class="katex-subscript">-<span class="katex-symbol">∞</span></sub><sup class="katex-superscript">x</sup> f<sub class="katex-subscript">X</sub>(t) dt</span><span class="katex-case-value"><span class="katex-text">连续型</span></span></span></span></span>
         </div>
         <p class="text-muted"><strong>应用：</strong>百分位数计算、风险概率评估、质量控制</p>
 
         <h3 class="mt-4 mb-3">5. 期望值（数学期望）</h3>
         <p>随机变量的"平均值"或"长期均值"：</p>
         <div class="formula-box">
-          $$E[X] = \begin{cases}
-          \sum_x x \cdot p_X(x) & \text{离散型} \\
-          \int_{-\infty}^{\infty} x \cdot f_X(x) dx & \text{连续型}
-          \end{cases}$$
+          <span class="katex katex-display">E[X] = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-op">∑</span><sub class="katex-subscript">x</sub> x <span class="katex-symbol">·</span> p<sub class="katex-subscript">X</sub>(x)</span><span class="katex-case-value"><span class="katex-text">离散型</span></span></span><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-op">∫</span><sub class="katex-subscript">-<span class="katex-symbol">∞</span></sub><sup class="katex-superscript"><span class="katex-symbol">∞</span></sup> x <span class="katex-symbol">·</span> f<sub class="katex-subscript">X</sub>(x) dx</span><span class="katex-case-value"><span class="katex-text">连续型</span></span></span></span></span>
         </div>
         <p class="text-muted"><strong>性质：</strong></p>
         <ul>
-          <li>$E[aX + b] = aE[X] + b$</li>
-          <li>$E[X + Y] = E[X] + E[Y]$</li>
-          <li>$E[XY] = E[X]E[Y]$ （当 X, Y 独立时）</li>
+          <li><span class="katex katex-inline">E[aX + b] = aE[X] + b</span></li>
+          <li><span class="katex katex-inline">E[X + Y] = E[X] + E[Y]</span></li>
+          <li><span class="katex katex-inline">E[XY] = E[X]E[Y]</span> （当 X, Y 独立时）</li>
         </ul>
         <p class="text-muted"><strong>应用：</strong>保险定价、投资回报评估、游戏设计、赌场优势计算</p>
 
         <h3 class="mt-4 mb-3">6. 方差</h3>
         <p>衡量随机变量围绕期望值的离散程度：</p>
         <div class="formula-box">
-          $$Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2$$
+          <span class="katex katex-display">Var(X) = E[(X - E[X])<sup class="katex-superscript">2</sup>] = E[X<sup class="katex-superscript">2</sup>] - (E[X])<sup class="katex-superscript">2</sup></span>
         </div>
         <p class="text-muted"><strong>性质：</strong></p>
         <ul>
-          <li>$Var(aX + b) = a^2 Var(X)$</li>
-          <li>$Var(X + Y) = Var(X) + Var(Y)$ （当 X, Y 独立时）</li>
+          <li><span class="katex katex-inline">Var(aX + b) = a<sup class="katex-superscript">2</sup> Var(X)</span></li>
+          <li><span class="katex katex-inline">Var(X + Y) = Var(X) + Var(Y)</span> （当 X, Y 独立时）</li>
         </ul>
         <p class="text-muted"><strong>应用：</strong>风险管理、投资组合优化、质量控制</p>
 
         <h3 class="mt-4 mb-3">7. 标准差</h3>
         <p>方差的平方根，与随机变量具有相同的单位：</p>
         <div class="formula-box">
-          $$\sigma_X = \sqrt{Var(X)}$$
+          <span class="katex katex-display"><span class="katex-symbol">σ</span><sub class="katex-subscript">X</sub> = <span class="katex-sqrt"><span class="katex-sqrt-root">Var(X)</span></span></span>
         </div>
 
         <h3 class="mt-4 mb-3">8. 协方差</h3>
         <p>衡量两个随机变量的线性关系：</p>
         <div class="formula-box">
-          $$Cov(X, Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]$$
+          <span class="katex katex-display">Cov(X, Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]</span>
         </div>
         <p class="text-muted"><strong>应用：</strong>投资组合风险分析、多元统计分析</p>
 
         <h3 class="mt-4 mb-3">9. 相关系数</h3>
         <p>标准化后的协方差，取值范围 [-1, 1]：</p>
         <div class="formula-box">
-          $$\rho_{X,Y} = \frac{Cov(X, Y)}{\sqrt{Var(X)Var(Y)}}$$
+          <span class="katex katex-display"><span class="katex-symbol">ρ</span><sub class="katex-subscript">X,Y</sub> = <span class="katex-fraction"><span class="katex-numerator">Cov(X, Y)</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">Var(X)Var(Y)</span></span></span></span></span>
         </div>
         <p class="text-muted"><strong>应用：</strong>相关性分析、特征选择、数据预处理</p>
       </div>
@@ -222,47 +216,47 @@
         <h3 class="mt-4 mb-3">1. 伯努利分布</h3>
         <p>描述单次二元试验（成功/失败）：</p>
         <div class="formula-box">
-          $$P(X = k) = p^k (1-p)^{1-k}, \quad k \in \{0, 1\}$$
+          <span class="katex katex-display">P(X = k) = p<sup class="katex-superscript">k</sup> (1-p)<sup class="katex-superscript">1-k</sup>, \quad k <span class="katex-symbol">∈</span> \{0, 1\}</span>
         </div>
         <p class="text-muted"><strong>参数：</strong>成功概率 p</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = p$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = p(1-p)$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = p</span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = p(1-p)</span></p>
         <p class="text-muted"><strong>应用：</strong>抛硬币、产品质检、二分类问题</p>
 
         <h3 class="mt-4 mb-3">2. 二项分布</h3>
         <p>n 次独立伯努利试验中成功的次数：</p>
         <div class="formula-box">
-          $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0, 1, \ldots, n$$
+          <span class="katex katex-display">P(X = k) = <span class="katex-binom"><span class="katex-binom-top">n</span><span class="katex-binom-bottom">k</span></span> p<sup class="katex-superscript">k</sup> (1-p)<sup class="katex-superscript">n-k</sup>, \quad k = 0, 1, \ldots, n</span>
         </div>
         <p class="text-muted"><strong>参数：</strong>试验次数 n，成功概率 p</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = np$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = np(1-p)$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = np</span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = np(1-p)</span></p>
         <p class="text-muted"><strong>应用：</strong>质量抽检、民意调查、体育比赛胜负预测</p>
 
         <h3 class="mt-4 mb-3">3. 泊松分布</h3>
         <p>描述固定时间或空间内事件发生的次数：</p>
         <div class="formula-box">
-          $$P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}, \quad k = 0, 1, 2, \ldots$$
+          <span class="katex katex-display">P(X = k) = <span class="katex-fraction"><span class="katex-numerator">e<sup class="katex-superscript">-<span class="katex-symbol">λ</span></sup> <span class="katex-symbol">λ</span><sup class="katex-superscript">k</sup></span><span class="katex-denominator">k!</span></span>, \quad k = 0, 1, 2, \ldots</span>
         </div>
         <p class="text-muted"><strong>参数：</strong>平均发生率 λ</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = \lambda$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = \lambda$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = <span class="katex-symbol">λ</span></span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = <span class="katex-symbol">λ</span></span></p>
         <p class="text-muted"><strong>应用：</strong>客服中心来电数、网站访问量、放射性衰变、交通事故统计</p>
 
         <h3 class="mt-4 mb-3">4. 几何分布</h3>
         <p>获得首次成功所需的试验次数：</p>
         <div class="formula-box">
-          $$P(X = k) = (1-p)^{k-1} p, \quad k = 1, 2, 3, \ldots$$
+          <span class="katex katex-display">P(X = k) = (1-p)<sup class="katex-superscript">k-1</sup> p, \quad k = 1, 2, 3, \ldots</span>
         </div>
         <p class="text-muted"><strong>参数：</strong>成功概率 p</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = \frac{1}{p}$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = \frac{1-p}{p^2}$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">p</span></span></span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = <span class="katex-fraction"><span class="katex-numerator">1-p</span><span class="katex-denominator">p<sup class="katex-superscript">2</sup></span></span></span></p>
         <p class="text-muted"><strong>应用：</strong>电话呼叫次数、抽奖次数、缺陷产品检测</p>
 
         <h3 class="mt-4 mb-3">5. 超几何分布</h3>
         <p>从有限总体中不放回抽样，成功次数的分布：</p>
         <div class="formula-box">
-          $$P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$$
+          <span class="katex katex-display">P(X = k) = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-binom"><span class="katex-binom-top">K</span><span class="katex-binom-bottom">k</span></span><span class="katex-binom"><span class="katex-binom-top">N-K</span><span class="katex-binom-bottom">n-k</span></span></span><span class="katex-denominator"><span class="katex-binom"><span class="katex-binom-top">N</span><span class="katex-binom-bottom">n</span></span></span></span></span>
         </div>
         <p class="text-muted"><strong>参数：</strong>总体大小 N，总体中成功数 K，抽样数 n</p>
         <p class="text-muted"><strong>应用：</strong>质量控制（不放回抽样）、抽奖、牌类游戏</p>
@@ -274,23 +268,20 @@
         <h3 class="mt-4 mb-3">1. 均匀分布</h3>
         <p>在区间 [a, b] 上每个值出现的概率相同：</p>
         <div class="formula-box">
-          $$f(x) = \begin{cases}
-          \frac{1}{b-a} & a \leq x \leq b \\
-          0 & \text{其他}
-          \end{cases}$$
+          <span class="katex katex-display">f(x) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">b-a</span></span></span><span class="katex-case-value">a <span class="katex-symbol">≤</span> x <span class="katex-symbol">≤</span> b</span></span><span class="katex-case-row"><span class="katex-case-condition">0</span><span class="katex-case-value"><span class="katex-text">其他</span></span></span></span></span>
         </div>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = \frac{a+b}{2}$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = \frac{(b-a)^2}{12}$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = <span class="katex-fraction"><span class="katex-numerator">a+b</span><span class="katex-denominator">2</span></span></span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = <span class="katex-fraction"><span class="katex-numerator">(b-a)<sup class="katex-superscript">2</sup></span><span class="katex-denominator">12</span></span></span></p>
         <p class="text-muted"><strong>应用：</strong>随机数生成、模拟建模、排队论</p>
 
         <h3 class="mt-4 mb-3">2. 正态分布（高斯分布）</h3>
         <p>最重要的连续分布，许多自然现象都近似服从正态分布：</p>
         <div class="formula-box">
-          $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+          <span class="katex katex-display">f(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator"><span class="katex-symbol">σ</span><span class="katex-sqrt"><span class="katex-sqrt-root">2<span class="katex-symbol">π</span></span></span></span></span> e<sup class="katex-superscript">-<span class="katex-fraction"><span class="katex-numerator">(x-<span class="katex-symbol">μ</span>)<sup class="katex-superscript">2</sup></span><span class="katex-denominator">2<span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span></span></sup></span>
         </div>
         <p class="text-muted"><strong>参数：</strong>均值 μ，标准差 σ</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = \mu$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = \sigma^2$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = <span class="katex-symbol">μ</span></span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = <span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span></p>
         <p class="text-muted"><strong>重要性质：</strong></p>
         <ul>
           <li>68.27% 的数据在 [μ-σ, μ+σ] 范围内</li>
@@ -302,22 +293,19 @@
         <h3 class="mt-4 mb-3">3. 标准正态分布</h3>
         <p>μ = 0, σ = 1 的正态分布，记为 Z ~ N(0,1)：</p>
         <div class="formula-box">
-          $$Z = \frac{X - \mu}{\sigma}$$
+          <span class="katex katex-display">Z = <span class="katex-fraction"><span class="katex-numerator">X - <span class="katex-symbol">μ</span></span><span class="katex-denominator"><span class="katex-symbol">σ</span></span></span></span>
         </div>
         <p class="text-muted"><strong>应用：</strong>标准化、假设检验、概率计算查表</p>
 
         <h3 class="mt-4 mb-3">4. 指数分布</h3>
         <p>描述独立随机事件之间的等待时间：</p>
         <div class="formula-box">
-          $$f(x) = \begin{cases}
-          \lambda e^{-\lambda x} & x \geq 0 \\
-          0 & x < 0
-          \end{cases}$$
+          <span class="katex katex-display">f(x) = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-symbol">λ</span> e<sup class="katex-superscript">-<span class="katex-symbol">λ</span> x</sup></span><span class="katex-case-value">x <span class="katex-symbol">≥</span> 0</span></span><span class="katex-case-row"><span class="katex-case-condition">0</span><span class="katex-case-value">x < 0</span></span></span></span>
         </div>
         <p class="text-muted"><strong>参数：</strong>率参数 λ</p>
-        <p class="text-muted"><strong>期望：</strong>$E[X] = \frac{1}{\lambda}$</p>
-        <p class="text-muted"><strong>方差：</strong>$Var(X) = \frac{1}{\lambda^2}$</p>
-        <p class="text-muted"><strong>无记忆性：</strong>$P(X > s+t | X > s) = P(X > t)$</p>
+        <p class="text-muted"><strong>期望：</strong><span class="katex katex-inline">E[X] = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span></p>
+        <p class="text-muted"><strong>方差：</strong><span class="katex katex-inline">Var(X) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator"><span class="katex-symbol">λ</span><sup class="katex-superscript">2</sup></span></span></span></p>
+        <p class="text-muted"><strong>无记忆性：</strong><span class="katex katex-inline">P(X > s+t | X > s) = P(X > t)</span></p>
         <p class="text-muted"><strong>应用：</strong>等待时间分析、寿命预测、排队论</p>
 
         <h3 class="mt-4 mb-3">5. 指数分布与泊松分布的关系</h3>
@@ -327,14 +315,14 @@
         <h3 class="mt-4 mb-3">6. 对数正态分布</h3>
         <p>对数服从正态分布的随机变量：</p>
         <div class="formula-box">
-          $$f(x) = \frac{1}{x\sigma\sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}}, \quad x > 0$$
+          <span class="katex katex-display">f(x) = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x<span class="katex-symbol">σ</span><span class="katex-sqrt"><span class="katex-sqrt-root">2<span class="katex-symbol">π</span></span></span></span></span> e<sup class="katex-superscript">-<span class="katex-fraction"><span class="katex-numerator">(<span class="katex-operator">ln</span> x - <span class="katex-symbol">μ</span>)<sup class="katex-superscript">2</sup></span><span class="katex-denominator">2<span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span></span></sup>, \quad x > 0</span>
         </div>
         <p class="text-muted"><strong>应用：</strong>股票价格、收入分布、产品寿命</p>
 
         <h3 class="mt-4 mb-3">7. t 分布（学生 t 分布）</h3>
         <p>用于小样本、总体标准差未知的情况：</p>
         <div class="formula-box">
-          $$f(t) = \frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}$$
+          <span class="katex katex-display">f(t) = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">Γ</span>(<span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">ν</span>+1</span><span class="katex-denominator">2</span></span>)</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-symbol">ν</span><span class="katex-symbol">π</span></span></span><span class="katex-symbol">Γ</span>(<span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">ν</span></span><span class="katex-denominator">2</span></span>)</span></span> <span class="katex-paren">(</span>1 + <span class="katex-fraction"><span class="katex-numerator">t<sup class="katex-superscript">2</sup></span><span class="katex-denominator"><span class="katex-symbol">ν</span></span></span><span class="katex-paren">)</span><sup class="katex-superscript">-<span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">ν</span>+1</span><span class="katex-denominator">2</span></span></sup></span>
         </div>
         <p class="text-muted"><strong>参数：</strong>自由度 ν</p>
         <p class="text-muted"><strong>特点：</strong>比正态分布更"厚尾"</p>
@@ -349,13 +337,13 @@
         <h4 class="mb-2">弱大数定律</h4>
         <p>当样本量趋近于无穷时，样本均值依概率收敛于总体均值：</p>
         <div class="formula-box">
-          $$\bar{X}_n \xrightarrow{P} \mu \quad \text{当} \quad n \to \infty$$
+          <span class="katex katex-display"><span class="katex-symbol">X̄</span><sub class="katex-subscript">n</sub> \xrightarrow{P} <span class="katex-symbol">μ</span> \quad <span class="katex-text">当</span> \quad n \to <span class="katex-symbol">∞</span></span>
         </div>
 
         <h4 class="mb-2 mt-3">强大数定律</h4>
         <p>当样本量趋近于无穷时，样本均值几乎必然收敛于总体均值：</p>
         <div class="formula-box">
-          $$\bar{X}_n \xrightarrow{a.s.} \mu \quad \text{当} \quad n \to \infty$$
+          <span class="katex katex-display"><span class="katex-symbol">X̄</span><sub class="katex-subscript">n</sub> \xrightarrow{a.s.} <span class="katex-symbol">μ</span> \quad <span class="katex-text">当</span> \quad n \to <span class="katex-symbol">∞</span></span>
         </div>
 
         <p class="text-muted"><strong>应用：</strong>保险定价、赌场盈利、频率稳定性的理论基础</p>
@@ -363,16 +351,16 @@
         <h3 class="mt-4 mb-3">2. 中心极限定理 (CLT)</h3>
         <p>当样本量足够大时，无论总体服从什么分布，样本均值的分布都近似服从正态分布：</p>
         <div class="formula-box">
-          $$\bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right) \quad \text{当} \quad n \to \infty$$
-          $$\frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0,1)$$
+          <span class="katex katex-display"><span class="katex-symbol">X̄</span><sub class="katex-subscript">n</sub> \sim N<span class="katex-paren">(</span><span class="katex-symbol">μ</span>, <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span><span class="katex-denominator">n</span></span><span class="katex-paren">)</span> \quad <span class="katex-text">当</span> \quad n \to <span class="katex-symbol">∞</span></span>
+          <span class="katex katex-display"><span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">X̄</span><sub class="katex-subscript">n</sub> - <span class="katex-symbol">μ</span></span><span class="katex-denominator"><span class="katex-symbol">σ</span>/<span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span> \xrightarrow{d} N(0,1)</span>
         </div>
         <p class="text-muted"><strong>应用：</strong>假设检验、置信区间、质量控制、抽样调查</p>
 
         <h3 class="mt-4 mb-3">3. 切比雪夫不等式</h3>
         <p>对于任意随机变量，给出概率的界限：</p>
         <div class="formula-box">
-          $$P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}$$
-          $$P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}$$
+          <span class="katex katex-display">P(|X - <span class="katex-symbol">μ</span>| <span class="katex-symbol">≥</span> k<span class="katex-symbol">σ</span>) <span class="katex-symbol">≤</span> <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">k<sup class="katex-superscript">2</sup></span></span></span>
+          <span class="katex katex-display">P(|X - <span class="katex-symbol">μ</span>| < k<span class="katex-symbol">σ</span>) <span class="katex-symbol">≥</span> 1 - <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">k<sup class="katex-superscript">2</sup></span></span></span>
         </div>
         <p class="text-muted"><strong>应用：</strong>概率界限估计、大数定律证明、质量控制</p>
       </div>
@@ -383,26 +371,26 @@
         <h3 class="mt-4 mb-3">1. 联合分布</h3>
         <p>描述多个随机变量同时取值的概率分布：</p>
         <div class="formula-box">
-          $$F_{X,Y}(x,y) = P(X \leq x, Y \leq y)$$
+          <span class="katex katex-display">F<sub class="katex-subscript">X,Y</sub>(x,y) = P(X <span class="katex-symbol">≤</span> x, Y <span class="katex-symbol">≤</span> y)</span>
         </div>
 
         <h3 class="mt-4 mb-3">2. 边缘分布</h3>
         <p>从联合分布中得到单个变量的分布：</p>
         <div class="formula-box">
-          $$F_X(x) = F_{X,Y}(x, \infty)$$
+          <span class="katex katex-display">F<sub class="katex-subscript">X</sub>(x) = F<sub class="katex-subscript">X,Y</sub>(x, <span class="katex-symbol">∞</span>)</span>
         </div>
 
         <h3 class="mt-4 mb-3">3. 条件分布</h3>
         <p>在已知一个变量取值的条件下，另一个变量的分布：</p>
         <div class="formula-box">
-          $$P(X=x|Y=y) = \frac{P(X=x, Y=y)}{P(Y=y)}$$
+          <span class="katex katex-display">P(X=x|Y=y) = <span class="katex-fraction"><span class="katex-numerator">P(X=x, Y=y)</span><span class="katex-denominator">P(Y=y)</span></span></span>
         </div>
 
         <h3 class="mt-4 mb-3">4. 独立性</h3>
         <p>两个随机变量独立的条件：</p>
         <div class="formula-box">
-          $$P(X \leq x, Y \leq y) = P(X \leq x) \times P(Y \leq y)$$
-          $$f_{X,Y}(x,y) = f_X(x) \times f_Y(y)$$
+          <span class="katex katex-display">P(X <span class="katex-symbol">≤</span> x, Y <span class="katex-symbol">≤</span> y) = P(X <span class="katex-symbol">≤</span> x) <span class="katex-symbol">×</span> P(Y <span class="katex-symbol">≤</span> y)</span>
+          <span class="katex katex-display">f<sub class="katex-subscript">X,Y</sub>(x,y) = f<sub class="katex-subscript">X</sub>(x) <span class="katex-symbol">×</span> f<sub class="katex-subscript">Y</sub>(y)</span>
         </div>
       </div>
 
@@ -463,7 +451,7 @@
           如果一个人的检测结果为阳性，他真正患病的概率是多少？
         </p>
         <div class="formula-box">
-          $$P(\text{患病}|\text{阳性}) = \frac{0.99 \times 0.001}{0.99 \times 0.001 + 0.01 \times 0.999} \approx 9\%$$
+          <span class="katex katex-display">P(<span class="katex-text">患病</span>|<span class="katex-text">阳性</span>) = <span class="katex-fraction"><span class="katex-numerator">0.99 <span class="katex-symbol">×</span> 0.001</span><span class="katex-denominator">0.99 <span class="katex-symbol">×</span> 0.001 + 0.01 <span class="katex-symbol">×</span> 0.999</span></span> <span class="katex-symbol">≈</span> 9\%</span>
         </div>
         <p class="text-danger">
           <strong>结论：</strong> 即使检测准确率高达 99%，阳性结果下真正患病的概率只有约 9%！
@@ -669,10 +657,10 @@
       const headsPercent = ((heads / flipResults.length) * 100).toFixed(1);
       const tailsPercent = ((tails / flipResults.length) * 100).toFixed(1);
 
-      document.getElementById('headsCount').textContent = `${heads} 次`;
-      document.getElementById('tailsCount').textContent = `${tails} 次`;
-      document.getElementById('headsPercent').textContent = `${headsPercent}%`;
-      document.getElementById('tailsPercent').textContent = `${tailsPercent}%`;
+      document.getElementById('headsCount').textContent = `<span class="katex katex-inline">{heads} 次`;
+      document.getElementById('tailsCount').textContent = `</span>{tails} 次`;
+      document.getElementById('headsPercent').textContent = `<span class="katex katex-inline">{headsPercent}%`;
+      document.getElementById('tailsPercent').textContent = `</span>{tailsPercent}%`;
 
       document.getElementById('flipResults').style.display = 'block';
 
@@ -811,11 +799,11 @@
 
       let resultText = '';
       if (type === 'less') {
-        resultText = `P(X ≤ ${x1}) = ${prob.toFixed(6)}`;
+        resultText = `P(X ≤ <span class="katex katex-inline">{x1}) = </span>{prob.toFixed(6)}`;
       } else if (type === 'greater') {
-        resultText = `P(X ≥ ${x1}) = ${prob.toFixed(6)}`;
+        resultText = `P(X ≥ <span class="katex katex-inline">{x1}) = </span>{prob.toFixed(6)}`;
       } else {
-        resultText = `P(${x1} ≤ X ≤ ${x2}) = ${prob.toFixed(6)}`;
+        resultText = `P(<span class="katex katex-inline">{x1} ≤ X ≤ </span>{x2}) = <span class="katex katex-inline">{prob.toFixed(6)}`;
       }
 
       document.getElementById('normalProbResult').textContent = resultText;
@@ -876,7 +864,7 @@
             },
             title: {
               display: true,
-              text: `正态分布 N(${mean}, ${std}²)`
+              text: `正态分布 N(</span>{mean}, <span class="katex katex-inline">{std}²)`
             }
           }
         }
@@ -892,7 +880,7 @@
       const mean = n * p;
       const variance = n * p * (1 - p);
 
-      document.getElementById('binomProbResult').textContent = `P(X = ${k}) = ${prob.toFixed(6)}`;
+      document.getElementById('binomProbResult').textContent = `P(X = </span>{k}) = <span class="katex katex-inline">{prob.toFixed(6)}`;
       document.getElementById('binomMean').textContent = mean.toFixed(4);
       document.getElementById('binomVar').textContent = variance.toFixed(4);
       document.getElementById('binomialResult').style.display = 'block';
@@ -934,7 +922,7 @@
             },
             title: {
               display: true,
-              text: `二项分布 B(${n}, ${p})`
+              text: `二项分布 B(</span>{n}, <span class="katex katex-inline">{p})`
             }
           }
         }
@@ -947,7 +935,7 @@
 
       const prob = poissonPMF(k, lambda);
 
-      document.getElementById('poissonProbResult').textContent = `P(X = ${k}) = ${prob.toFixed(6)}`;
+      document.getElementById('poissonProbResult').textContent = `P(X = </span>{k}) = <span class="katex katex-inline">{prob.toFixed(6)}`;
       document.getElementById('poissonMean').textContent = lambda.toFixed(4);
       document.getElementById('poissonVar').textContent = lambda.toFixed(4);
       document.getElementById('poissonResult').style.display = 'block';
@@ -990,7 +978,7 @@
             },
             title: {
               display: true,
-              text: `泊松分布 P(${lambda})`
+              text: `泊松分布 P(</span>{lambda})`
             }
           }
         }
@@ -1005,7 +993,7 @@
       const greaterProb = 1 - lessProb;
       const mean = 1 / lambda;
 
-      document.getElementById('expProbResult').textContent = `P(X = ${x}) = ${exponentialPDF(x, lambda).toFixed(6)}`;
+      document.getElementById('expProbResult').textContent = `P(X = <span class="katex katex-inline">{x}) = </span>{exponentialPDF(x, lambda).toFixed(6)}`;
       document.getElementById('expLess').textContent = lessProb.toFixed(6);
       document.getElementById('expGreater').textContent = greaterProb.toFixed(6);
       document.getElementById('expMean').textContent = mean.toFixed(4);
@@ -1059,7 +1047,7 @@
             },
             title: {
               display: true,
-              text: `指数分布 Exp(${lambda})`
+              text: `指数分布 Exp(<span class="katex katex-inline">{lambda})`
             }
           },
           scales: {
@@ -1089,8 +1077,8 @@
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
+          {left: '<span class="katex katex-display">', right: '</span>', display: true},
+          {left: '</span>', right: '$', display: false}
         ]
       });
     });

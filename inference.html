@@ -30,8 +30,8 @@
           点估计是用样本统计量的一个具体数值作为总体参数的估计值。
         </p>
         <ul>
-          <li><strong>样本均值</strong> 估计总体均值 $\mu$</li>
-          <li><strong>样本方差</strong> 估计总体方差 $\sigma^2$</li>
+          <li><strong>样本均值</strong> 估计总体均值 <span class="katex katex-inline"><span class="katex-symbol">μ</span></span></li>
+          <li><strong>样本方差</strong> 估计总体方差 <span class="katex katex-inline"><span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span></li>
         </ul>
 
         <h3 class="mt-4 mb-3">2. 区间估计（置信区间）</h3>
@@ -40,23 +40,23 @@
         </p>
 
         <h4 class="mt-3 mb-2">总体均值的置信区间</h4>
-        <p>对于大样本（$n \geq 30$），使用正态分布：</p>
+        <p>对于大样本（<span class="katex katex-inline">n <span class="katex-symbol">≥</span> 30</span>），使用正态分布：</p>
         <div class="formula-box">
-          $$\bar{x} \pm z_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$$
+          <span class="katex katex-display"><span class="katex-symbol">x̄</span> <span class="katex-symbol">±</span> z<sub class="katex-subscript"><span class="katex-symbol">α</span>/2</sub> <span class="katex-symbol">·</span> <span class="katex-fraction"><span class="katex-numerator">s</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
         </div>
         <p class="text-muted">
           其中：
         </p>
         <ul>
-          <li>$\bar{x}$ - 样本均值</li>
-          <li>$z_{\alpha/2}$ - 标准正态分布的临界值</li>
-          <li>$s$ - 样本标准差</li>
-          <li>$n$ - 样本容量</li>
+          <li><span class="katex katex-inline"><span class="katex-symbol">x̄</span></span> - 样本均值</li>
+          <li><span class="katex katex-inline">z<sub class="katex-subscript"><span class="katex-symbol">α</span>/2</sub></span> - 标准正态分布的临界值</li>
+          <li><span class="katex katex-inline">s</span> - 样本标准差</li>
+          <li><span class="katex katex-inline">n</span> - 样本容量</li>
         </ul>
 
-        <p class="mt-3">对于小样本（$n < 30$），使用 t 分布：</p>
+        <p class="mt-3">对于小样本（<span class="katex katex-inline">n < 30</span>），使用 t 分布：</p>
         <div class="formula-box">
-          $$\bar{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}$$
+          <span class="katex katex-display"><span class="katex-symbol">x̄</span> <span class="katex-symbol">±</span> t<sub class="katex-subscript"><span class="katex-symbol">α</span>/2, n-1</sub> <span class="katex-symbol">·</span> <span class="katex-fraction"><span class="katex-numerator">s</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
         </div>
       </div>
 
@@ -170,8 +170,8 @@
 
         <h4 class="mt-3 mb-2">假设的类型：</h4>
         <ul>
-          <li><strong>原假设 ($H_0$)</strong>：通常表示"没有差异"或"没有效果"</li>
-          <li><strong>备择假设 ($H_1$)</strong>：通常表示"有差异"或"有效果"</li>
+          <li><strong>原假设 (<span class="katex katex-inline">H<sub class="katex-subscript">0</sub></span>)</strong>：通常表示"没有差异"或"没有效果"</li>
+          <li><strong>备择假设 (<span class="katex katex-inline">H<sub class="katex-subscript">1</sub></span>)</strong>：通常表示"有差异"或"有效果"</li>
         </ul>
 
         <h4 class="mt-3 mb-2">检验步骤：</h4>
@@ -189,7 +189,7 @@
           <h4>1. z 检验</h4>
           <p>当总体标准差已知或样本容量较大时使用。</p>
           <div class="formula-box">
-            $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+            <span class="katex katex-display">z = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">x̄</span> - <span class="katex-symbol">μ</span><sub class="katex-subscript">0</sub></span><span class="katex-denominator"><span class="katex-symbol">σ</span> / <span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
           </div>
         </div>
 
@@ -197,7 +197,7 @@
           <h4>2. t 检验</h4>
           <p>当总体标准差未知且样本容量较小时使用。</p>
           <div class="formula-box">
-            $$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+            <span class="katex katex-display">t = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">x̄</span> - <span class="katex-symbol">μ</span><sub class="katex-subscript">0</sub></span><span class="katex-denominator">s / <span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
           </div>
         </div>
 
@@ -219,8 +219,8 @@
         <ol>
           <li>
             <strong>建立假设：</strong><br />
-            $H_0: \mu = 1000$（灯泡平均寿命为 1000 小时）<br />
-            $H_1: \mu \neq 1000$（灯泡平均寿命不为 1000 小时）
+            <span class="katex katex-inline">H<sub class="katex-subscript">0</sub>: <span class="katex-symbol">μ</span> = 1000</span>（灯泡平均寿命为 1000 小时）<br />
+            <span class="katex katex-inline">H<sub class="katex-subscript">1</sub>: <span class="katex-symbol">μ</span> <span class="katex-symbol">≠</span> 1000</span>（灯泡平均寿命不为 1000 小时）
           </li>
           <li>
             <strong>选择检验统计量：</strong><br />
@@ -228,15 +228,15 @@
           </li>
           <li>
             <strong>计算 t 值：</strong><br />
-            $t = \frac{990 - 1000}{50 / \sqrt{36}} = \frac{-10}{8.33} = -1.2$
+            <span class="katex katex-inline">t = <span class="katex-fraction"><span class="katex-numerator">990 - 1000</span><span class="katex-denominator">50 / <span class="katex-sqrt"><span class="katex-sqrt-root">36</span></span></span></span> = <span class="katex-fraction"><span class="katex-numerator">-10</span><span class="katex-denominator">8.33</span></span> = -1.2</span>
           </li>
           <li>
             <strong>临界值：</strong><br />
-            在 $\alpha = 0.05$，自由度为 35 时，$t_{0.025, 35} \approx 2.03$
+            在 <span class="katex katex-inline"><span class="katex-symbol">α</span> = 0.05</span>，自由度为 35 时，<span class="katex katex-inline">t<sub class="katex-subscript">0.025, 35</sub> <span class="katex-symbol">≈</span> 2.03</span>
           </li>
           <li>
             <strong>决策：</strong><br />
-            由于 $|t| = 1.2 < 2.03$，不拒绝原假设
+            由于 <span class="katex katex-inline">|t| = 1.2 < 2.03</span>，不拒绝原假设
           </li>
         </ol>
 
@@ -254,28 +254,28 @@
           <thead>
             <tr>
               <th></th>
-              <th>$H_0$ 为真</th>
-              <th>$H_0$ 为假</th>
+              <th><span class="katex katex-inline">H<sub class="katex-subscript">0</sub></span> 为真</th>
+              <th><span class="katex katex-inline">H<sub class="katex-subscript">0</sub></span> 为假</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>拒绝 $H_0$</strong></td>
-              <td class="table-danger">第一类错误（假阳性）<br />$P = \alpha$</td>
-              <td class="table-success">正确决策<br />$P = 1 - \beta$</td>
+              <td><strong>拒绝 <span class="katex katex-inline">H<sub class="katex-subscript">0</sub></span></strong></td>
+              <td class="table-danger">第一类错误（假阳性）<br /><span class="katex katex-inline">P = <span class="katex-symbol">α</span></span></td>
+              <td class="table-success">正确决策<br /><span class="katex katex-inline">P = 1 - <span class="katex-symbol">β</span></span></td>
             </tr>
             <tr>
-              <td><strong>不拒绝 $H_0$</strong></td>
-              <td class="table-success">正确决策<br />$P = 1 - \alpha$</td>
-              <td class="table-danger">第二类错误（假阴性）<br />$P = \beta$</td>
+              <td><strong>不拒绝 <span class="katex katex-inline">H<sub class="katex-subscript">0</sub></span></strong></td>
+              <td class="table-success">正确决策<br /><span class="katex katex-inline">P = 1 - <span class="katex-symbol">α</span></span></td>
+              <td class="table-danger">第二类错误（假阴性）<br /><span class="katex katex-inline">P = <span class="katex-symbol">β</span></span></td>
             </tr>
           </tbody>
         </table>
 
         <ul class="mt-3">
-          <li><strong>第一类错误（$\alpha$）</strong>：原假设为真时拒绝原假设的概率</li>
-          <li><strong>第二类错误（$\beta$）</strong>：原假设为假时不拒绝原假设的概率</li>
-          <li><strong>检验功效（$1-\beta$）</strong>：正确拒绝错误原假设的概率</li>
+          <li><strong>第一类错误（<span class="katex katex-inline"><span class="katex-symbol">α</span></span>）</strong>：原假设为真时拒绝原假设的概率</li>
+          <li><strong>第二类错误（<span class="katex katex-inline"><span class="katex-symbol">β</span></span>）</strong>：原假设为假时不拒绝原假设的概率</li>
+          <li><strong>检验功效（<span class="katex katex-inline">1-<span class="katex-symbol">β</span></span>）</strong>：正确拒绝错误原假设的概率</li>
         </ul>
       </div>
     </div>
@@ -358,7 +358,7 @@
             },
             title: {
               display: true,
-              text: `置信区间可视化 (${cl}% 置信水平)`,
+              text: `置信区间可视化 (<span class="katex katex-inline">{cl}% 置信水平)`,
             },
           },
           scales: {
@@ -373,8 +373,8 @@
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
+          {left: '<span class="katex katex-display">', right: '</span>', display: true},
+          {left: '</span>', right: '$', display: false}
         ]
       });
     });
