@@ -10,6 +10,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="main-content">
     <div class="probability-page">
       <h1 class="page-title">概率论基础</h1>
@@ -392,6 +422,156 @@
           <span class="katex katex-display">P(X <span class="katex-symbol">≤</span> x, Y <span class="katex-symbol">≤</span> y) = P(X <span class="katex-symbol">≤</span> x) <span class="katex-symbol">×</span> P(Y <span class="katex-symbol">≤</span> y)</span>
           <span class="katex katex-display">f<sub class="katex-subscript">X,Y</sub>(x,y) = f<sub class="katex-subscript">X</sub>(x) <span class="katex-symbol">×</span> f<sub class="katex-subscript">Y</sub>(y)</span>
         </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 矩母函数（Moment Generating Function）</h2>
+
+        <h3 class="mt-4 mb-3">定义</h3>
+        <p>矩母函数是随机变量的一个重要工具，可以生成各阶矩：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">M<sub class="katex-subscript">X</sub>(t) = E[e<sup class="katex-superscript">tX</sup>]</span>
+        </div>
+
+        <h3 class="mt-4 mb-3">性质</h3>
+        <ul>
+          <li><span class="katex katex-inline">M<sub class="katex-subscript">X</sub>(0) = 1</span></li>
+          <li><span class="katex katex-inline">M<sub class="katex-subscript">X</sub><sup class="katex-superscript">(k)</sup>(0) = E[X<sup class="katex-superscript">k</sup>]</span>（第 k 阶矩）</li>
+          <li><span class="katex katex-inline">M<sub class="katex-subscript">X+Y</sub>(t) = M<sub class="katex-subscript">X</sub>(t) <span class="katex-symbol">×</span> M<sub class="katex-subscript">Y</sub>(t)</span>（当 X, Y 独立时）</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">常见分布的矩母函数</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>分布</th>
+              <th>参数</th>
+              <th>矩母函数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>二项分布</td>
+              <td>B(n,p)</td>
+              <td><span class="katex katex-inline">(1-p + pe<sup class="katex-superscript">t</sup>)<sup class="katex-superscript">n</sup></span></td>
+            </tr>
+            <tr>
+              <td>泊松分布</td>
+              <td>Poisson(λ)</td>
+              <td><span class="katex katex-inline">exp[<span class="katex-symbol">λ</span>(e<sup class="katex-superscript">t</sup> - 1)]</span></td>
+            </tr>
+            <tr>
+              <td>正态分布</td>
+              <td>N(μ,σ²)</td>
+              <td><span class="katex katex-inline">exp(<span class="katex-symbol">μ</span>t + <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup>t<sup class="katex-superscript">2</sup></span><span class="katex-denominator">2</span></span>)</span></td>
+            </tr>
+            <tr>
+              <td>指数分布</td>
+              <td>Exp(λ)</td>
+              <td><span class="katex katex-inline"><span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">λ</span></span><span class="katex-denominator"><span class="katex-symbol">λ</span> - t</span></span></span> （t < λ）</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-muted"><strong>应用：</strong>推导分布性质、证明极限定理、计算复杂概率</p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎯 条件期望与条件方差</h2>
+
+        <h3 class="mt-4 mb-3">条件期望</h3>
+        <p>在已知某些信息的条件下，随机变量的期望值：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">E[X|Y] = <span class="katex-op">∑</span><sub class="katex-subscript">x</sub> x <span class="katex-symbol">×</span> P(X=x|Y)</span>
+        </div>
+
+        <h3 class="mt-4 mb-3">全期望公式（重期望公式）</h3>
+        <p>条件期望的期望等于无条件期望：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">E[X] = E[E[X|Y]]</span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>分层抽样、序贯分析、决策树</p>
+
+        <h3 class="mt-4 mb-3">条件方差</h3>
+        <p>在已知 Y 的条件下，X 的方差：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">Var(X|Y) = E[(X - E[X|Y])<sup class="katex-superscript">2</sup>|Y]</span>
+        </div>
+
+        <h3 class="mt-4 mb-3">全方差公式</h3>
+        <p>将总方差分解为条件期望的方差和条件方差的期望：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">Var(X) = E[Var(X|Y)] + Var(E[X|Y])</span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>方差分析、风险分解、贝叶斯推断</p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">⚡ 马尔可夫不等式与推广</h2>
+
+        <h3 class="mt-4 mb-3">马尔可夫不等式</h3>
+        <p>对于非负随机变量 X：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(X <span class="katex-symbol">≥</span> a) <span class="katex-symbol">≤</span> <span class="katex-fraction"><span class="katex-numerator">E[X]}</span><span class="katex-denominator">a</span></span></span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>概率界限估计、算法分析</p>
+
+        <h3 class="mt-4 mb-3">切比雪夫不等式（马尔可夫不等式的推论）</h3>
+        <p>对于任意随机变量，已知期望和方差：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(|X - <span class="katex-symbol">μ</span>| <span class="katex-symbol">≥</span> <span class="katex-symbol">ε</span>) <span class="katex-symbol">≤</span> <span class="katex-fraction"><span class="katex-numerator">Var(X)}</span><span class="katex-denominator"><span class="katex-symbol">ε</span><sup class="katex-superscript">2</sup></span></span></span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>概率界限、质量控制、大数定律证明</p>
+
+        <h3 class="mt-4 mb-3">霍夫丁不等式（Hoeffding's Inequality）</h3>
+        <p>有界随机变量之和的集中不等式：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(<span class="katex-symbol">X̄</span><sub class="katex-subscript">n</sub> - <span class="katex-symbol">μ</span> <span class="katex-symbol">≥</span> <span class="katex-symbol">ε</span>) <span class="katex-symbol">≤</span> exp(<span class="katex-fraction"><span class="katex-numerator">-2n<span class="katex-symbol">ε</span><sup class="katex-superscript">2</sup></span><span class="katex-denominator"><span class="katex-op">∑</span>(b<sub class="katex-subscript">i</sub>-a<sub class="katex-subscript">i</sub>)<sup class="katex-superscript">2</sup></span></span>)</span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>机器学习理论、在线学习、强化学习</p>
+
+        <h3 class="mt-4 mb-3">切尔诺夫界（Chernoff Bound）</h3>
+        <p>利用矩母函数推导的指数级概率界限：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(X <span class="katex-symbol">≥</span> (1+<span class="katex-symbol">δ</span>)<span class="katex-symbol">μ</span>) <span class="katex-symbol">≤</span> exp(<span class="katex-fraction"><span class="katex-numerator">-<span class="katex-symbol">δ</span><sup class="katex-superscript">2</sup><span class="katex-symbol">μ</span></span><span class="katex-denominator">2+<span class="katex-symbol">δ</span></span></span>)</span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>随机化算法分析、通信系统、密码学</p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔗 随机过程基础</h2>
+
+        <h3 class="mt-4 mb-3">什么是随机过程？</h3>
+        <p>随机过程是一族随机变量的集合，通常与时间相关：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">\{X<sub class="katex-subscript">t</sub> : t <span class="katex-symbol">∈</span> T\}</span>
+        </div>
+        <p class="text-muted">其中 T 是指标集（通常是时间集）</p>
+
+        <h3 class="mt-4 mb-3">马尔可夫链</h3>
+        <p>具有马尔可夫性质的离散时间随机过程：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(X<sub class="katex-subscript">n+1</sub> = j | X<sub class="katex-subscript">n</sub> = i, X<sub class="katex-subscript">n-1</sub>, \ldots, X<sub class="katex-subscript">0</sub>) = P(X<sub class="katex-subscript">n+1</sub> = j | X<sub class="katex-subscript">n</sub> = i)</span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>PageRank 算法、金融建模、生物序列分析</p>
+
+        <h3 class="mt-4 mb-3">泊松过程</h3>
+        <p>描述随机事件在时间上发生的计数过程：</p>
+        <ul>
+          <li><strong>独立增量：</strong>不同时间区间内的事件数相互独立</li>
+          <li><strong>平稳增量：</strong>事件数只依赖于时间区间长度</li>
+          <li><strong>Poisson 分布：</strong>在时间 t 内的事件数服从 Poisson(λt)</li>
+        </ul>
+        <p class="text-muted"><strong>应用：</strong>排队论、交通流、通信网络、放射性衰变</p>
+
+        <h3 class="mt-4 mb-3">布朗运动（维纳过程）</h3>
+        <p>连续时间的随机过程，具有以下性质：</p>
+        <ul>
+          <li><span class="katex katex-inline">W(0) = 0</span></li>
+          <li>独立增量</li>
+          <li><span class="katex katex-inline">W(t+s) - W(s) \sim N(0, t)</span></li>
+          <li>路径连续</li>
+        </ul>
+        <p class="text-muted"><strong>应用：</strong>金融衍生品定价、物理学、信号处理</p>
       </div>
 
       <div class="content-card">
@@ -1074,11 +1254,20 @@
       }
     });
 
+    // 加载Bootstrap和KaTeX
+    var bootstrapCustomScript = document.createElement('script');
+    bootstrapCustomScript.src = 'assets/bootstrap-custom.js';
+    document.body.appendChild(bootstrapCustomScript);
+
+    var katexCustomScript = document.createElement('script');
+    katexCustomScript.src = 'assets/katex-custom.js';
+    document.body.appendChild(katexCustomScript);
+
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '<span class="katex katex-display">', right: '</span>', display: true},
-          {left: '</span>', right: '$', display: false}
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
         ]
       });
     });

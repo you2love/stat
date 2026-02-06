@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Basics from './pages/Basics';
 import Probability from './pages/Probability';
 import Inference from './pages/Inference';
+import DataAnalysis from './pages/DataAnalysis';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/basics" element={<Basics />} />
             <Route path="/probability" element={<Probability />} />
             <Route path="/inference" element={<Inference />} />
+            <Route path="/data-analysis" element={<DataAnalysis />} />
           </Routes>
         </div>
         <footer className="footer">

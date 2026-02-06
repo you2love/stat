@@ -23,6 +23,14 @@ function Home() {
       description: '理解假设检验、置信区间、回归分析等高级方法',
       link: '/inference',
       color: 'icon-green'
+    },
+    {
+      icon: '🎯',
+      title: '数据分析流程',
+      description: '学习如何从数据中利用统计学找到规律',
+      link: '/data-analysis',
+      color: 'icon-blue',
+      highlight: true
     }
   ];
 
@@ -79,8 +87,14 @@ function Home() {
 
       <div className="row">
         {features.map((feature, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <div className="content-card h-100">
+          <div 
+            className={`col-md-4 mb-4 ${feature.highlight ? 'offset-md-4' : ''}`} 
+            key={index}
+          >
+            <div 
+              className={`content-card h-100 ${feature.highlight ? '' : ''}`} 
+              style={feature.highlight ? { background: 'linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(63, 81, 181, 0.1) 100%)' } : {}}
+            >
               <div className="feature-icon mb-3" style={{ width: '60px', height: '60px', fontSize: '2rem' }}>
                 {feature.icon}
               </div>

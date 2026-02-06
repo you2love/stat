@@ -9,6 +9,7 @@ function Navbar() {
     { path: '/basics', label: '统计学基础' },
     { path: '/probability', label: '概率论' },
     { path: '/inference', label: '统计推断' },
+    { path: '/data-analysis', label: '数据分析流程' },
   ];
 
   return (

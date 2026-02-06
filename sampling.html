@@ -10,6 +10,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="main-content">
     <div class="sampling-page">
       <h1 class="page-title">设计与抽样</h1>
@@ -326,6 +356,143 @@
             <li>进行预调查测试问卷</li>
           </ul>
         </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔬 高级抽样方法</h2>
+
+        <h3 class="mt-4 mb-3">1. 多阶段抽样（Multistage Sampling）</h3>
+        <p>分层抽样和整群抽样的结合，分多个阶段进行：</p>
+        <ol>
+          <li>第一阶段：抽取若干个群</li>
+          <li>第二阶段：在每个群中再抽取若干个子群</li>
+          <li>可以继续多个阶段</li>
+        </ol>
+        <p class="text-muted"><strong>优点：</strong>节省成本、操作灵活<br /><strong>缺点：</strong>抽样误差较大、分析复杂</p>
+        <p class="text-muted"><strong>应用：</strong>大规模调查（如人口普查）、地理抽样、企业调查</p>
+
+        <h3 class="mt-4 mb-3">2. 系统抽样（Systematic Sampling）</h3>
+        <p>按照固定的间隔从总体中抽取样本：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">k = <span class="katex-fraction"><span class="katex-numerator">N</span><span class="katex-denominator">n</span></span></span>
+        </div>
+        <p>其中 N 是总体大小，n 是样本大小，k 是抽样间隔</p>
+        <p class="text-muted"><strong>步骤：</strong></p>
+        <ol>
+          <li>计算间隔 k = N/n</li>
+          <li>从 1 到 k 中随机选择一个起始点</li>
+          <li>每隔 k 个单位抽取一个样本</li>
+        </ol>
+        <p class="text-muted"><strong>应用：</strong>流水线质量检查、文件抽样、时间序列数据</p>
+
+        <h3 class="mt-4 mb-3">3. 概率与规模成比例抽样（PPS）</h3>
+        <p>每个群被抽中的概率与其规模成比例：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P<sub class="katex-subscript">i</sub> = <span class="katex-fraction"><span class="katex-numerator">M<sub class="katex-subscript">i</sub></span><span class="katex-denominator"><span class="katex-op">∑</span><sub class="katex-subscript">j=1</sub><sup class="katex-superscript">K</sup> M<sub class="katex-subscript">j</sub></span></span></span>
+        </div>
+        <p class="text-muted">其中 M<sub>i</sub> 是第 i 个群的规模</p>
+        <p class="text-muted"><strong>优点：</strong>样本规模更均衡、提高估计精度<br /><strong>应用：</strong>企业调查、学校调查、医院调查</p>
+
+        <h3 class="mt-4 mb-3">4. 二重抽样（Double Sampling）</h3>
+        <p>分两阶段抽样：第一阶段收集基本信息，第二阶段进行深入调查：</p>
+        <ul>
+          <li><strong>第一阶段：</strong>抽取大样本，收集简单、廉价的变量</li>
+          <li><strong>第二阶段：</strong>从第一阶段样本中抽取子样本，收集详细、昂贵的变量</li>
+        </ul>
+        <p class="text-muted"><strong>应用：</strong>分层抽样（先分类再抽样）、非响应补偿、缺失值填补</p>
+
+        <h3 class="mt-4 mb-3">5. 贝叶斯抽样（Bayesian Sampling）</h3>
+        <p>结合先验信息和样本信息进行抽样设计：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(<span class="katex-symbol">θ</span>|data) \propto P(data|<span class="katex-symbol">θ</span>) × P(<span class="katex-symbol">θ</span>)</span>
+        </div>
+        <p class="text-muted"><strong>优点：</strong>充分利用先验知识、小样本估计更精确<br /><strong>缺点：</strong>需要先验分布、计算复杂<br /><strong>应用：</strong>稀有事件抽样、医学试验、质量控制</p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 抽样误差与非抽样误差</h2>
+
+        <h3 class="mt-4 mb-3">抽样误差</h3>
+        <p>由于只抽取部分样本而产生的误差：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">SE = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span></span>
+        </div>
+        <p class="text-muted"><strong>特点：</strong>不可避免、可以通过增加样本量减小、可以量化</p>
+        <p class="text-muted"><strong>控制方法：</strong></p>
+        <ul>
+          <li>增加样本量</li>
+          <li>使用分层抽样</li>
+          <li>选择合适的抽样设计</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">非抽样误差</h3>
+        <p>除抽样误差外的所有误差，通常比抽样误差更难控制：</p>
+
+        <div class="mb-4">
+          <h4>1. 覆盖误差（Coverage Error）</h4>
+          <p>抽样框不完全覆盖目标总体：</p>
+          <ul>
+            <li><strong>遗漏误差（Undercoverage）</strong>：部分总体单位未被包含在抽样框中</li>
+            <li><strong>过覆盖误差（Overcoverage）</strong>：抽样框包含不属于总体的单位</li>
+          </ul>
+          <p class="text-muted"><strong>例子：</strong>电话调查忽略没有电话的人群、网络调查忽略不使用网络的人群</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. 无响应误差（Nonresponse Error）</h4>
+          <p>被选中的样本单位不响应或部分响应：</p>
+          <ul>
+            <li><strong>单位无响应：</strong>被抽中的单位完全拒绝回答</li>
+            <li><strong>项目无响应：</strong>单位回答部分问题，跳过某些敏感问题</li>
+          </ul>
+          <p class="text-muted"><strong>影响：</strong>无响应者与响应者可能有系统性差异，导致估计偏差</p>
+          <p class="text-muted"><strong>应对：</strong>多次联系、无响应调整、加权调整</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. 测量误差（Measurement Error）</h4>
+          <p>数据收集过程中的误差：</p>
+          <ul>
+            <li><strong>问卷设计问题：</strong>问题表述不清、选项不当、顺序效应</li>
+            <li><strong>访问员效应：</strong>访问员的态度、语气影响受访者回答</li>
+            <li><strong>受访者效应：</strong>记忆偏差、社会期许偏差、故意撒谎</li>
+          </ul>
+          <p class="text-muted"><strong>控制：</strong>预测试问卷、培训访问员、匿名调查</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>4. 处理误差（Processing Error）</h4>
+          <p>数据录入、编码、分析过程中的误差：</p>
+          <ul>
+            <li>数据录入错误</li>
+            <li>编码错误</li>
+            <li>计算错误</li>
+            <li>软件使用错误</li>
+          </ul>
+          <p class="text-muted"><strong>控制：</strong>双重录入、数据验证、质量控制程序</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎯 最优样本量设计</h2>
+
+        <h3 class="mt-4 mb-3">考虑的因素</h3>
+        <p>最优样本量需要在精度和成本之间平衡：</p>
+        <ul>
+          <li><strong>精度要求：</strong>可接受的抽样误差</li>
+          <li><strong>置信水平：</strong>通常为 95% 或 99%</li>
+          <li><strong>总体大小：</strong>N 对样本量的影响有限（当 N 很大时）</li>
+          <li><strong>总体方差：</strong>方差越大，需要的样本量越大</li>
+          <li><strong>成本约束：</strong>预算限制</li>
+          <li><strong>时间限制：</strong>调查时间窗口</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">有限总体修正</h3>
+        <p>当样本占总体比例较大时（>5%），需要使用有限总体修正因子：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">SE<sub class="katex-subscript">fpc</sub> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">σ</span></span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root">n</span></span></span></span> <span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-fraction"><span class="katex-numerator">N - n</span><span class="katex-denominator">N - 1</span></span></span></span></span>
+        </div>
+        <p class="text-muted"><strong>有限总体修正因子：</strong><span class="katex katex-inline"><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-fraction"><span class="katex-numerator">N - n</span><span class="katex-denominator">N - 1</span></span></span></span></span></p>
+        <p class="text-muted"><strong>效果：</strong>当 n/N 很小时，修正因子接近 1，影响可忽略；当 n/N 较大时，可以显著减少抽样误差</p>
       </div>
     </div>
   </div>

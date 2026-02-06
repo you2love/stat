@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="车祸数据分析 - 从数据中发现规律，减少交通事故">
+  <title>车祸数据分析 - 统计学学习平台</title>
+  <link rel="stylesheet" href="assets/bootstrap-custom.css">
+  <link rel="stylesheet" href="assets/katex-custom.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="traffic-accident-page">
+      <h1 class="page-title">🚗 车祸数据分析案例</h1>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 案例背景</h2>
+        <p>
+          道路交通事故是影响公共安全的重要问题。通过分析交通事故数据，我们可以：
+        </p>
+        <ul>
+          <li>识别事故高发时段和地点</li>
+          <li>分析事故原因和影响因素</li>
+          <li>评估交通安全措施的效果</li>
+          <li>为政策制定提供数据支持</li>
+        </ul>
+        <p class="text-muted">
+          <strong>数据来源：</strong>模拟数据（基于国内交通事故统计特征）
+          <br>
+          <strong>数据范围：</strong>2018-2023年全国交通事故数据
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📋 数据集说明</h2>
+
+        <h3 class="mt-4 mb-3">变量说明</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>变量名</th>
+              <th>类型</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>年份</td>
+              <td>数值型</td>
+              <td>事故发生的年份</td>
+            </tr>
+            <tr>
+              <td>月份</td>
+              <td>数值型</td>
+              <td>事故发生的月份（1-12）</td>
+            </tr>
+            <tr>
+              <td>地区</td>
+              <td>分类变量</td>
+              <td>事故发生地区（东/中/西部）</td>
+            </tr>
+            <tr>
+              <td>天气</td>
+              <td>分类变量</td>
+              <td>天气状况（晴/雨/雪/雾）</td>
+            </tr>
+            <tr>
+              <td>道路类型</td>
+              <td>分类变量</td>
+              <td>道路类型（高速公路/国道/省道/城市道路）</td>
+            </tr>
+            <tr>
+              <td>事故原因</td>
+              <td>分类变量</td>
+              <td>主要原因（超速/疲劳驾驶/酒驾/违规变道等）</td>
+            </tr>
+            <tr>
+              <td>死亡人数</td>
+              <td>数值型</td>
+              <td>事故造成的死亡人数</td>
+            </tr>
+            <tr>
+              <td>受伤人数</td>
+              <td>数值型</td>
+              <td>事故造成的受伤人数</td>
+            </tr>
+            <tr>
+              <td>直接损失</td>
+              <td>数值型</td>
+              <td>直接经济损失（万元）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📈 描述性统计分析</h2>
+
+        <h3 class="mt-4 mb-3">1. 年度趋势分析</h3>
+        <p>首先分析2018-2023年交通事故的年度变化趋势：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="yearlyTrendChart"></canvas>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>观察结果：</strong>
+          <ul>
+            <li>2018-2020年事故数量呈下降趋势，可能与加强交通管理有关</li>
+            <li>2020年后略有回升，可能与汽车保有量增加有关</li>
+            <li>总体呈缓慢下降趋势，显示交通安全措施有效</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-4 mb-3">2. 月度分布分析</h3>
+        <p>分析事故在一年12个月中的分布规律：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="monthlyDistributionChart"></canvas>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>观察结果：</strong>
+          <ul>
+            <li>1-2月事故较少，可能与春节假期交通管制有关</li>
+            <li>7-8月事故明显增多，与夏季出行高峰、旅游旺季一致</li>
+            <li>11-12月事故增多，可能与冬季恶劣天气增多有关</li>
+            <li><strong>建议：</strong>在7-8月和11-12月加强交通管理和宣传教育</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-4 mb-3">3. 地区分布分析</h3>
+        <p>分析不同地区的事故分布情况：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="regionDistributionChart"></canvas>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>观察结果：</strong>
+          <ul>
+            <li>东部地区事故数量最多，但事故率可能相对较低（考虑车辆保有量）</li>
+            <li>中部地区事故数量居中</li>
+            <li>西部地区事故数量较少，但事故率可能较高（道路条件复杂）</li>
+            <li><strong>建议：</strong>西部地区需要加强道路基础设施建设和驾驶员培训</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-4 mb-3">4. 天气因素分析</h3>
+        <p>分析不同天气条件下的事故分布：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="weatherImpactChart"></canvas>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>观察结果：</strong>
+          <ul>
+            <li>晴天事故数量最多，但这主要是因为晴天出行量最大</li>
+            <li>雨天事故率较高，路面湿滑、能见度下降是主要因素</li>
+            <li>雾天和雪天虽然事故数量较少，但事故严重程度通常较高</li>
+            <li><strong>建议：</strong>恶劣天气发布预警信息，提醒驾驶员减速慢行</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔍 推断性统计分析</h2>
+
+        <h3 class="mt-4 mb-3">1. 事故原因分析</h3>
+        <p>分析各类事故原因的占比：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="causeAnalysisChart"></canvas>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>关键发现：</strong>
+          <ul>
+            <li>超速行驶是事故的首要原因，约占30%</li>
+            <li>疲劳驾驶占比约25%，特别是在长途运输中</li>
+            <li>违规变道和不按规则让行约占20%</li>
+            <li>酒后驾驶约占15%，但事故严重程度通常最高</li>
+            <li><strong>政策建议：</strong>加强超速监测，推广疲劳驾驶预警系统，严惩酒驾</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-4 mb-3">2. 事故严重程度分析</h3>
+        <p>分析不同类型事故的严重程度（死亡人数）：</p>
+
+        <div style="height: 400px; margin: 20px 0;">
+          <canvas id="severityChart"></canvas>
+        </div>
+
+        <div class="alert alert-danger">
+          <strong>严重事故特征：</strong>
+          <ul>
+            <li>酒后驾驶导致的事故平均死亡人数最高</li>
+            <li>高速公路事故的严重程度通常高于城市道路</li>
+            <li>恶劣天气条件下的事故更容易造成多人伤亡</li>
+            <li><strong>重点关注：</strong>酒驾预防和高速公路安全管理</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-4 mb-3">3. 相关性分析</h3>
+        <p>分析各因素之间的相关性：</p>
+
+        <div class="mb-4">
+          <h4>相关系数矩阵</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>因素</th>
+                <th>事故数量</th>
+                <th>死亡人数</th>
+                <th>受伤人数</th>
+                <th>经济损失</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>事故数量</td>
+                <td>1.00</td>
+                <td>0.65</td>
+                <td>0.78</td>
+                <td>0.72</td>
+              </tr>
+              <tr>
+                <td>死亡人数</td>
+                <td>0.65</td>
+                <td>1.00</td>
+                <td>0.58</td>
+                <td>0.63</td>
+              </tr>
+              <tr>
+                <td>受伤人数</td>
+                <td>0.78</td>
+                <td>0.58</td>
+                <td>1.00</td>
+                <td>0.81</td>
+              </tr>
+              <tr>
+                <td>经济损失</td>
+                <td>0.72</td>
+                <td>0.63</td>
+                <td>0.81</td>
+                <td>1.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>相关性解读：</strong>
+          <ul>
+            <li>事故数量与受伤人数相关性最高（r=0.78），说明大部分事故会导致受伤</li>
+            <li>经济损失与受伤人数相关性较高（r=0.81），医疗费用是主要损失来源</li>
+            <li>死亡人数与其他指标相关性相对较低，说明严重事故有其独特特征</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 假设检验</h2>
+
+        <h3 class="mt-4 mb-3">检验问题1：东部地区与西部地区的事故率是否有显著差异？</h3>
+
+        <div class="formula-box">
+          <span class="katex katex-display">H<sub class="katex-subscript">0</sub>: P<sub class="katex-subscript">东部</sub> = P<sub class="katex-subscript">西部</sub></span>
+          <span class="katex katex-display">H<sub class="katex-subscript">1</sub>: P<sub class="katex-subscript">东部</sub> ≠ P<sub class="katex-subscript">西部</sub></span>
+        </div>
+
+        <div class="alert alert-success">
+          <strong>检验结果：</strong>
+          <p>使用比例差异的Z检验，得到 z = 3.42，P值 < 0.001</p>
+          <p><strong>结论：</strong>在 0.05 显著性水平下，拒绝原假设。东部地区与西部地区的事故率存在显著差异。</p>
+          <p class="text-muted">这可能源于两地区的车辆保有量、道路密度、交通管理水平等因素的不同。</p>
+        </div>
+
+        <h3 class="mt-4 mb-3">检验问题2：酒驾事故的平均死亡人数是否显著高于非酒驾事故？</h3>
+
+        <div class="formula-box">
+          <span class="katex katex-display">H<sub class="katex-subscript">0</sub>: <span class="katex-symbol">μ</span><sub class="katex-subscript">酒驾</sub> = <span class="katex-symbol">μ</span><sub class="katex-subscript">非酒驾</sub></span>
+          <span class="katex katex-display">H<sub class="katex-subscript">1</sub>: <span class="katex-symbol">μ</span><sub class="katex-subscript">酒驾</sub> > <span class="katex-symbol">μ</span><sub class="katex-subscript">非酒驾</sub></span>
+        </div>
+
+        <div class="alert alert-danger">
+          <strong>检验结果：</strong>
+          <p>使用两样本t检验，得到 t = 5.67，P值 < 0.0001</p>
+          <p><strong>结论：</strong>在 0.05 显著性水平下，拒绝原假设。酒驾事故的平均死亡人数显著高于非酒驾事故。</p>
+          <p class="text-muted">这一结果强调了酒驾的危险性，支持对酒驾行为实施更严厉的法律制裁。</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎯 数据驱动的政策建议</h2>
+
+        <h3 class="mt-4 mb-3">1. 针对高发时段的措施</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-danger">7-8月（夏季高峰）</h5>
+            <ul>
+              <li>加强高速公路巡逻密度</li>
+              <li>开展夏季交通安全宣传月活动</li>
+              <li>增设临时交通监控设备</li>
+              <li>优化交通信号灯配时</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-primary">11-12月（冬季风险）</h5>
+            <ul>
+              <li>提前发布恶劣天气预警</li>
+              <li>准备除雪设备和应急物资</li>
+              <li>限制恶劣天气下的车辆通行</li>
+              <li>加强冬季行车安全培训</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-4 mb-3">2. 针对主要事故原因的措施</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-warning">超速行驶（30%）</h5>
+            <ul>
+              <li>推广智能限速系统</li>
+              <li>增设固定和移动测速点</li>
+              <li>实施超速与保险费率挂钩</li>
+              <li>提高超速违法成本</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-info">疲劳驾驶（25%）</h5>
+            <ul>
+              <li>强制长途运输车辆安装疲劳监测系统</li>
+              <li>规范货运司机工作时长</li>
+              <li>增设高速公路服务区</li>
+              <li>推广驾驶员疲劳预警技术</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-4 mb-3">3. 针对高风险区域的管理</h3>
+        <ul>
+          <li><strong>西部地区：</strong>加大道路基础设施投入，改善路面条件，增设防护设施</li>
+          <li><strong>高速公路：</strong>提高监控覆盖率，快速响应事故救援</li>
+          <li><strong>城市交叉口：</strong>优化信号灯配时，减少违规变道</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">4. 技术措施</h3>
+        <ul>
+          <li>推广车联网技术，实现车辆间通信</li>
+          <li>应用人工智能识别危险驾驶行为</li>
+          <li>建设智能交通管理系统</li>
+          <li>利用大数据预测事故高发区域</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 交互式分析工具</h2>
+        <p>使用下面的工具探索数据，发现更多规律：</p>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label">选择年份：</label>
+              <select class="form-select" id="analysisYear">
+                <option value="all">全部年份</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">选择地区：</label>
+              <select class="form-select" id="analysisRegion">
+                <option value="all">全部地区</option>
+                <option value="东部">东部地区</option>
+                <option value="中部">中部地区</option>
+                <option value="西部">西部地区</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">选择天气：</label>
+              <select class="form-select" id="analysisWeather">
+                <option value="all">全部天气</option>
+                <option value="晴">晴天</option>
+                <option value="雨">雨天</option>
+                <option value="雪">雪天</option>
+                <option value="雾">雾天</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="runCustomAnalysis()">运行分析</button>
+          </div>
+          <div class="col-md-6">
+            <div id="analysisResult" style="display: none;">
+              <h5>分析结果</h5>
+              <div id="resultStats"></div>
+              <div style="height: 300px; margin-top: 20px;">
+                <canvas id="customAnalysisChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">💡 学习要点总结</h2>
+
+        <h3 class="mt-4 mb-3">本案例演示的统计学方法</h3>
+        <ul>
+          <li><strong>描述性统计：</strong>均值、中位数、方差、频数分布</li>
+          <li><strong>数据可视化：</strong>折线图、柱状图、饼图、热力图</li>
+          <li><strong>相关性分析：</strong>Pearson相关系数、相关矩阵</li>
+          <li><strong>假设检验：</strong>Z检验、t检验、比例差异检验</li>
+          <li><strong>数据挖掘：</strong>模式识别、异常检测、趋势分析</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">从数据到行动</h3>
+        <p>统计学不仅仅是数字和公式，更是解决实际问题的工具。通过本案例，我们看到了：</p>
+        <ul>
+          <li>如何从原始数据中发现有意义的模式</li>
+          <li>如何通过统计检验验证我们的猜想</li>
+          <li>如何将分析结果转化为可执行的政策建议</li>
+          <li>如何通过持续的数据监测和反馈改进措施</li>
+        </ul>
+
+        <div class="alert alert-success">
+          <strong>核心启示：</strong>好的数据分析应该回答"是什么"、"为什么"、"怎么办"三个问题，并为决策提供科学依据。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/bootstrap-custom.js"></script>
+  <script src="assets/katex-custom.js"></script>
+  <script src="assets/chartjs-custom.js"></script>
+  <script>
+    // 模拟数据
+    const yearlyData = {
+      2018: { accidents: 244937, deaths: 63194, injuries: 258532, loss: 1380.5 },
+      2019: { accidents: 238351, deaths: 62763, injuries: 251886, loss: 1345.8 },
+      2020: { accidents: 217509, deaths: 61821, injuries: 222424, loss: 1212.3 },
+      2021: { accidents: 230632, deaths: 61703, injuries: 238417, loss: 1289.7 },
+      2022: { accidents: 245732, deaths: 60189, injuries: 253617, loss: 1374.2 },
+      2023: { accidents: 258123, deaths: 59234, injuries: 267845, loss: 1432.8 }
+    };
+
+    const monthlyData = [18500, 17200, 19800, 21300, 22800, 24500, 26800, 27500, 23900, 22100, 25400, 26100];
+
+    const regionData = {
+      labels: ['东部地区', '中部地区', '西部地区'],
+      accidents: [102400, 76800, 43200],
+      vehicles: [2.8, 1.5, 0.8] // 亿辆
+    };
+
+    const weatherData = {
+      labels: ['晴天', '雨天', '雪天', '雾天'],
+      accidents: [145600, 62400, 28900, 21500],
+      rate: [0.08, 0.12, 0.18, 0.22] // 事故率
+    };
+
+    const causeData = {
+      labels: ['超速行驶', '疲劳驾驶', '违规变道', '酒后驾驶', '其他'],
+      percentage: [30, 25, 20, 15, 10],
+      deaths: [1.2, 1.5, 1.1, 2.8, 0.9] // 平均死亡人数
+    };
+
+    let charts = {};
+
+    // 年度趋势图
+    function createYearlyTrendChart() {
+      const ctx = document.getElementById('yearlyTrendChart').getContext('2d');
+      charts.yearlyTrend = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Object.keys(yearlyData),
+          datasets: [{
+            label: '事故数量',
+            data: Object.values(yearlyData).map(d => d.accidents),
+            borderColor: 'rgba(33, 150, 243, 1)',
+            backgroundColor: 'rgba(33, 150, 243, 0.1)',
+            fill: true,
+            tension: 0.4
+          }, {
+            label: '死亡人数',
+            data: Object.values(yearlyData).map(d => d.deaths),
+            borderColor: 'rgba(244, 67, 54, 1)',
+            backgroundColor: 'rgba(244, 67, 54, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '2018-2023年交通事故趋势'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false
+            }
+          }
+        }
+      });
+    }
+
+    // 月度分布图
+    function createMonthlyDistributionChart() {
+      const ctx = document.getElementById('monthlyDistributionChart').getContext('2d');
+      charts.monthly = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          datasets: [{
+            label: '事故数量',
+            data: monthlyData,
+            backgroundColor: 'rgba(33, 150, 243, 0.6)',
+            borderColor: 'rgba(33, 150, 243, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '各月份事故数量分布'
+            }
+          }
+        }
+      });
+    }
+
+    // 地区分布图
+    function createRegionDistributionChart() {
+      const ctx = document.getElementById('regionDistributionChart').getContext('2d');
+      charts.region = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: regionData.labels,
+          datasets: [{
+            label: '事故数量',
+            data: regionData.accidents,
+            backgroundColor: 'rgba(33, 150, 243, 0.6)',
+            yAxisID: 'y'
+          }, {
+            label: '车辆保有量（亿辆）',
+            data: regionData.vehicles,
+            type: 'line',
+            borderColor: 'rgba(244, 67, 54, 1)',
+            backgroundColor: 'rgba(244, 67, 54, 0.1)',
+            yAxisID: 'y1'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '各地区事故数量与车辆保有量对比'
+            }
+          },
+          scales: {
+            y: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+              title: {
+                display: true,
+                text: '事故数量'
+              }
+            },
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'right',
+              title: {
+                display: true,
+                text: '车辆保有量（亿辆）'
+              },
+              grid: {
+                drawOnChartArea: false
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 天气影响图
+    function createWeatherImpactChart() {
+      const ctx = document.getElementById('weatherImpactChart').getContext('2d');
+      charts.weather = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: weatherData.labels,
+          datasets: [{
+            label: '事故数量',
+            data: weatherData.accidents,
+            backgroundColor: 'rgba(33, 150, 243, 0.6)',
+            yAxisID: 'y'
+          }, {
+            label: '事故率',
+            data: weatherData.rate,
+            type: 'line',
+            borderColor: 'rgba(244, 67, 54, 1)',
+            backgroundColor: 'rgba(244, 67, 54, 0.1)',
+            yAxisID: 'y1'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '不同天气条件下的事故情况'
+            }
+          },
+          scales: {
+            y: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+              title: {
+                display: true,
+                text: '事故数量'
+              }
+            },
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'right',
+              title: {
+                display: true,
+                text: '事故率'
+              },
+              grid: {
+                drawOnChartArea: false
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 事故原因分析图
+    function createCauseAnalysisChart() {
+      const ctx = document.getElementById('causeAnalysisChart').getContext('2d');
+      charts.cause = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: causeData.labels,
+          datasets: [{
+            data: causeData.percentage,
+            backgroundColor: [
+              'rgba(244, 67, 54, 0.7)',
+              'rgba(255, 152, 0, 0.7)',
+              'rgba(255, 193, 7, 0.7)',
+              'rgba(156, 39, 176, 0.7)',
+              'rgba(96, 125, 139, 0.7)'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '事故原因分布'
+            }
+          }
+        }
+      });
+    }
+
+    // 严重程度分析图
+    function createSeverityChart() {
+      const ctx = document.getElementById('severityChart').getContext('2d');
+      charts.severity = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: causeData.labels,
+          datasets: [{
+            label: '平均死亡人数',
+            data: causeData.deaths,
+            backgroundColor: [
+              'rgba(244, 67, 54, 0.7)',
+              'rgba(255, 152, 0, 0.7)',
+              'rgba(255, 193, 7, 0.7)',
+              'rgba(156, 39, 176, 0.7)',
+              'rgba(96, 125, 139, 0.7)'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '不同原因事故的平均死亡人数'
+            }
+          }
+        }
+      });
+    }
+
+    // 自定义分析
+    function runCustomAnalysis() {
+      const year = document.getElementById('analysisYear').value;
+      const region = document.getElementById('analysisRegion').value;
+      const weather = document.getElementById('analysisWeather').value;
+
+      // 模拟分析结果
+      let baseAccidents = 240000;
+      let baseDeaths = 62000;
+
+      // 根据筛选条件调整数据
+      if (year !== 'all') {
+        baseAccidents = yearlyData[year].accidents;
+        baseDeaths = yearlyData[year].deaths;
+      }
+
+      if (region === '东部') {
+        baseAccidents *= 0.42;
+        baseDeaths *= 0.40;
+      } else if (region === '中部') {
+        baseAccidents *= 0.31;
+        baseDeaths *= 0.33;
+      } else if (region === '西部') {
+        baseAccidents *= 0.18;
+        baseDeaths *= 0.27;
+      }
+
+      if (weather === '晴') {
+        baseAccidents *= 0.60;
+        baseDeaths *= 0.55;
+      } else if (weather === '雨') {
+        baseAccidents *= 0.26;
+        baseDeaths *= 0.28;
+      } else if (weather === '雪') {
+        baseAccidents *= 0.09;
+        baseDeaths *= 0.12;
+      } else if (weather === '雾') {
+        baseAccidents *= 0.08;
+        baseDeaths *= 0.11;
+      }
+
+      const accidents = Math.round(baseAccidents);
+      const deaths = Math.round(baseDeaths);
+      const injuries = Math.round(accidents * 1.05);
+      const deathRate = (deaths / accidents * 100).toFixed(2);
+
+      document.getElementById('resultStats').innerHTML = `
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">事故数量</h5>
+                <h3 class="text-primary">${accidents.toLocaleString()}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">死亡人数</h5>
+                <h3 class="text-danger">${deaths.toLocaleString()}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">受伤人数</h5>
+                <h3 class="text-warning">${injuries.toLocaleString()}</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">死亡率</h5>
+                <h3 class="text-info">${deathRate}%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('analysisResult').style.display = 'block';
+
+      // 绘制对比图
+      const ctx = document.getElementById('customAnalysisChart').getContext('2d');
+      if (charts.custom) {
+        charts.custom.destroy();
+      }
+
+      charts.custom = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['死亡', '受伤', '无伤亡'],
+          datasets: [{
+            data: [deaths, injuries, accidents - deaths - injuries],
+            backgroundColor: [
+              'rgba(244, 67, 54, 0.7)',
+              'rgba(255, 152, 0, 0.7)',
+              'rgba(76, 175, 80, 0.7)'
+            ]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '事故伤亡分布'
+            }
+          }
+        }
+      });
+    }
+
+    // 初始化
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ]
+      });
+
+      createYearlyTrendChart();
+      createMonthlyDistributionChart();
+      createRegionDistributionChart();
+      createWeatherImpactChart();
+      createCauseAnalysisChart();
+      createSeverityChart();
+    });
+  </script>
+</body>
+</html>

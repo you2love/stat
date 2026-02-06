@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 统计学学习平台
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是一个纯静态网站，提供交互式统计学教程。通过清晰的课程结构和可视化示例，帮助学习者掌握统计学的核心概念和方法。
 
-## Available Scripts
+## 项目结构
 
-In the project directory, you can run:
+```
+stat-tutorial/
+├── index.html          # 首页
+├── basics.html         # 统计学基础
+├── probability.html    # 概率论基础
+├── inference.html      # 统计推断
+├── sampling.html       # 设计与抽样
+├── data-analysis.html  # 数据分析流程
+├── assets/             # 静态资源
+│   ├── bootstrap-custom.css
+│   ├── bootstrap-custom.js
+│   ├── katex-custom.css
+│   ├── katex-custom.js
+│   ├── chartjs-custom.js
+│   └── bootstrap/
+├── styles.css          # 全局样式
+└── README.md
+```
 
-### `npm start`
+## 功能特点
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📊 **统计学基础**：学习均值、中位数、众数、方差、标准差等核心概念
+- 🎲 **概率论基础**：掌握概率分布、贝叶斯定理、条件概率等重要理论
+- 🔍 **统计推断**：理解假设检验、置信区间、回归分析等高级方法
+- 📋 **设计与抽样**：学习实验设计、抽样方法、数据收集
+- 🎯 **数据分析流程**：学习如何从数据中利用统计学找到规律
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 如何运行
 
-### `npm test`
+### 使用 Python (推荐)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Python 3
+python3 -m http.server 8000
 
-### `npm run build`
+# 访问 http://localhost:8000
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 使用 Node.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# 安装 http-server (如果尚未安装)
+npm install -g http-server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 运行
+http-server -p 8000
 
-### `npm run eject`
+# 或使用 npm start
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 直接打开
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+由于这是一个纯静态网站，你也可以直接在浏览器中打开 HTML 文件。不过，某些功能可能需要通过 HTTP 服务器运行才能正常工作。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 部署
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### GitHub Pages
 
-## Learn More
+1. 将项目推送到 GitHub 仓库
+2. 在仓库设置中启用 GitHub Pages
+3. 选择主分支作为源
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 其他静态托管服务
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+该网站可以部署到任何支持静态文件的托管服务：
+- Netlify
+- Vercel
+- Cloudflare Pages
+- AWS S3
 
-### Code Splitting
+## 技术栈
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 纯 HTML5 + CSS3 + JavaScript
+- Bootstrap 5 (样式)
+- KaTeX (数学公式渲染)
+- Chart.js (图表)
 
-### Analyzing the Bundle Size
+## 开发
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+编辑 HTML 文件后，刷新浏览器即可看到更改。不需要构建过程。
 
-### Making a Progressive Web App
+## 许可证
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT

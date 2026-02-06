@@ -10,6 +10,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="main-content">
     <div class="basics-page">
       <h1 class="page-title">统计学基础</h1>
@@ -719,6 +749,116 @@
             <canvas id="dataChart"></canvas>
           </div>
         </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🛡️ 鲁棒统计量（Robust Statistics）</h2>
+
+        <h3 class="mt-4 mb-3">什么是鲁棒统计量？</h3>
+        <p>
+          鲁棒统计量对离群值不敏感，即使数据中存在极端值也能保持稳定。
+          在数据质量不确定时，鲁棒统计量比传统统计量更可靠。
+        </p>
+
+        <h3 class="mt-4 mb-3">常见鲁棒统计量</h3>
+
+        <div class="mb-4">
+          <h4>1. 中位数绝对偏差（Median Absolute Deviation, MAD）</h4>
+          <p>数据点与中位数偏差的绝对值的中位数：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">MAD = median(|x<sub class="katex-subscript">i</sub> - median(X)|)</span>
+          </div>
+          <p class="text-muted"><strong>优点：</strong>不受离群值影响，比标准差更稳健</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. 截尾均值（Trimmed Mean）</h4>
+          <p>去除一定比例的极端值后的均值：</p>
+          <div class="formula-box">
+            <span class="katex katex-display"><span class="katex-symbol">x̄</span><sub class="katex-subscript">trimmed</sub> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=k+1</sub><sup class="katex-superscript">n-k</sup> x<sub class="katex-subscript">(i)</sub></span><span class="katex-denominator">n - 2k</span></span></span>
+          </div>
+          <p class="text-muted">常见的是 5% 或 10% 截尾均值</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. Winzorized 均值</h4>
+          <p>将一定比例的极端值替换为剩余值的边界值，然后计算均值</p>
+          <p class="text-muted"><strong>优点：</strong>保留了样本量，比截尾均值更常用</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔄 数据变换（Data Transformation）</h2>
+
+        <h3 class="mt-4 mb-3">为什么需要数据变换？</h3>
+        <ul>
+          <li>使数据更接近正态分布</li>
+          <li>稳定方差（方差齐性）</li>
+          <li>改善线性关系</li>
+          <li>减少离群值的影响</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">常见变换方法</h3>
+
+        <div class="mb-4">
+          <h4>1. 对数变换（Log Transformation）</h4>
+          <p>适用于右偏数据、乘性模型：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">y' = log(x + c)</span>
+          </div>
+          <p class="text-muted">c 是常数，用于处理零值或负值</p>
+          <p><strong>应用：</strong>收入分析、金融数据、微生物计数</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. 平方根变换（Square Root Transformation）</h4>
+          <p>适用于计数数据（泊松分布）：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">y' = <span class="katex-sqrt"><span class="katex-sqrt-root">x</span></span></span>
+          </div>
+          <p><strong>应用：</strong>事件计数、缺陷数量、放射性衰变</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. 倒数变换（Reciprocal Transformation）</h4>
+          <p>适用于高度右偏数据：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">y' = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">x</span></span></span>
+          </div>
+          <p><strong>应用：</strong>反应时间、电阻值、某些物理测量</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>4. Box-Cox 变换</h4>
+          <p>自动寻找最优变换参数 λ：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">y' = <span class="katex-cases"><span class="katex-case-row"><span class="katex-case-condition"><span class="katex-fraction"><span class="katex-numerator">x<sup class="katex-superscript"><span class="katex-symbol">λ</span></sup> - 1</span><span class="katex-denominator"><span class="katex-symbol">λ</span></span></span></span></span><span class="katex-case-value"><span class="katex-symbol">λ</span> ≠ 0</span></span></span><span class="katex-case-row"><span class="katex-case-condition">ln(x)</span><span class="katex-case-value"><span class="katex-symbol">λ</span> = 0</span></span></span></span></span>
+          </div>
+          <p class="text-muted"><strong>优点：</strong>通过最大似然估计自动选择 λ</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📐 多变量描述统计</h2>
+
+        <h3 class="mt-4 mb-3">协方差矩阵（Covariance Matrix）</h3>
+        <p>描述多个变量之间的协方差结构：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">\mathbf{S} = <span class="katex-fraction"><span class="katex-numerator">1</span><span class="katex-denominator">n-1</span></span><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup>(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>})(\mathbf{x}<sub class="katex-subscript">i</sub> - <span class="katex-symbol">\mathbf{x̄</span>)<sup class="katex-superscript">T</sup></span>
+        </div>
+
+        <h3 class="mt-4 mb-3">相关矩阵（Correlation Matrix）</h3>
+        <p>描述多个变量之间的线性相关强度：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">\mathbf{R} = <span class="katex-matrix">(1 &nbsp;&nbsp;r<sub class="katex-subscript">12</sub> &nbsp;&nbsp;··· &nbsp;&nbsp;r<sub class="katex-subscript">1p</sub><br>r<sub class="katex-subscript">21</sub> &nbsp;&nbsp;1 &nbsp;&nbsp;··· &nbsp;&nbsp;r<sub class="katex-subscript">2p</sub><br>⋮ &nbsp;&nbsp;⋮ &nbsp;&nbsp;⋱ &nbsp;&nbsp;⋮<br>r<sub class="katex-subscript">p1</sub> &nbsp;&nbsp;r<sub class="katex-subscript">p2</sub> &nbsp;&nbsp;··· &nbsp;&nbsp;1)</span></span></span>
+        </div>
+
+        <h3 class="mt-4 mb-3">马氏距离（Mahalanobis Distance）</h3>
+        <p>考虑协方差结构的距离度量：</p>
+        <div class="formula-box">
+          <span class="katex katex-display">D<sub class="katex-subscript">M</sub>(\mathbf{x}) = <span class="katex-sqrt"><span class="katex-sqrt-root">(\mathbf{x} - <span class="katex-symbol">\mathbf{x̄</span>)<sup class="katex-superscript">T</sup>\mathbf{S}<sup class="katex-superscript">-1</sup>(\mathbf{x} - <span class="katex-symbol">\mathbf{x̄</span>)</span></span></span>
+        </div>
+        <p class="text-muted"><strong>应用：</strong>多元离群值检测、模式识别、质量控制</p>
       </div>
 
       <div class="content-card">

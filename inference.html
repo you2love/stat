@@ -10,6 +10,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class="main-content">
     <div class="inference-page">
       <h1 class="page-title">统计推断</h1>
@@ -278,6 +308,243 @@
           <li><strong>检验功效（<span class="katex katex-inline">1-<span class="katex-symbol">β</span></span>）</strong>：正确拒绝错误原假设的概率</li>
         </ul>
       </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 P 值（P-value）</h2>
+
+        <h3 class="mt-4 mb-3">什么是 P 值？</h3>
+        <p>
+          P 值是在原假设为真的条件下，观察到当前统计量或更极端结果的概率。
+          它是衡量证据强度的重要指标，而非原假设为真的概率。
+        </p>
+
+        <div class="formula-box">
+          <span class="katex katex-display">P-value = P(<span class="katex-text">观察到的或更极端的结果} | H<sub class="katex-subscript">0</sub> <span class="katex-text">为真)</span></span>
+        </div>
+
+        <h3 class="mt-4 mb-3">P 值的解释</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>P 值范围</th>
+              <th>解释</th>
+              <th>证据强度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P > 0.10</td>
+              <td>不足以拒绝原假设</td>
+              <td>无证据</td>
+            </tr>
+            <tr>
+              <td>0.05 < P ≤ 0.10</td>
+              <td>边缘显著</td>
+              <td>弱证据</td>
+            </tr>
+            <tr>
+              <td>0.01 < P ≤ 0.05</td>
+              <td>统计显著</td>
+              <td>中等证据</td>
+            </tr>
+            <tr>
+              <td>0.001 < P ≤ 0.01</td>
+              <td>高度显著</td>
+              <td>强证据</td>
+            </tr>
+            <tr>
+              <td>P ≤ 0.001</td>
+              <td>极其显著</td>
+              <td>极强证据</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info mt-3">
+          <strong>⚠️ 重要提醒：</strong> P 值 ≠ 0.05 不是"魔法界限"。不要将 P 值作为衡量研究价值的唯一标准。
+          应该关注效应量、置信区间和研究设计的合理性。
+        </div>
+
+        <h3 class="mt-4 mb-3">P 值的常见误解</h3>
+        <ul>
+          <li><strong>误解 1：</strong> P 值是原假设为真的概率
+            <br /><span class="text-muted">正确：P 值是假设原假设为真时观察到当前结果（或更极端）的概率</span>
+          </li>
+          <li><strong>误解 2：</strong> P < 0.05 意味着结果有实际意义
+            <br /><span class="text-muted">正确：P 值只表示统计显著性，需要结合效应量判断实际意义</span>
+          </li>
+          <li><strong>误解 3：</strong> P = 0.05 是固定的显著性标准
+            <br /><span class="text-muted">正确：显著性水平应根据研究情境和后果进行调整</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📏 效应量（Effect Size）</h2>
+
+        <h3 class="mt-4 mb-3">为什么需要效应量？</h3>
+        <p>
+          P 值受样本量影响很大：大样本可能检测到微小的、无实际意义的差异；小样本可能漏掉重要的差异。
+          效应量量化了差异或关联的大小，不受样本量影响。
+        </p>
+
+        <h3 class="mt-4 mb-3">常见的效应量指标</h3>
+
+        <div class="mb-4">
+          <h4>1. Cohen's d（用于两组均值比较）</h4>
+          <p>标准化均值差异：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">d = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">x̄</span><sub class="katex-subscript">1</sub> - <span class="katex-symbol">x̄</span><sub class="katex-subscript">2</sub></span><span class="katex-denominator">s<sub class="katex-subscript">pooled</sub></span></span></span>
+          </div>
+          <p class="text-muted">其中 <span class="katex katex-inline">s<sub class="katex-subscript">pooled</sub></span> 是合并标准差</p>
+          <p><strong>解释标准：</strong></p>
+          <ul>
+            <li>|d| = 0.2：小效应</li>
+            <li>|d| = 0.5：中等效应</li>
+            <li>|d| = 0.8：大效应</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. 相关系数 r（Pearson 相关）</h4>
+          <p>线性关系的强度：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">r = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)</span><span class="katex-denominator"><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span>(x<sub class="katex-subscript">i</sub> - <span class="katex-symbol">x̄</span>)<sup class="katex-superscript">2</sup></span></span><span class="katex-sqrt"><span class="katex-sqrt-root"><span class="katex-op">∑</span>(y<sub class="katex-subscript">i</sub> - <span class="katex-symbol">ȳ</span>)<sup class="katex-superscript">2</sup></span></span></span></span></span>
+          </div>
+          <p><strong>解释标准：</strong></p>
+          <ul>
+            <li>|r| = 0.1：小效应</li>
+            <li>|r| = 0.3：中等效应</li>
+            <li>|r| = 0.5：大效应</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. R²（决定系数）</h4>
+          <p>回归模型中因变量变异的可解释比例：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">R<sup class="katex-superscript">2</sup> = <span class="katex-fraction"><span class="katex-numerator">SSR</span><span class="katex-denominator">SST</span></span> = 1 - <span class="katex-fraction"><span class="katex-numerator">SSE</span><span class="katex-denominator">SST</span></span></span>
+          </div>
+          <p class="text-muted">SSR：回归平方和，SSE：残差平方和，SST：总平方和</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔀 多重比较问题（Multiple Testing Problem）</h2>
+
+        <h3 class="mt-4 mb-3">问题背景</h3>
+        <p>
+          当同时进行多个假设检验时，出现至少一个第一类错误的概率会显著增加。
+          如果进行 k 次独立检验，每次显著性水平为 α，则至少犯一次第一类错误的概率为：
+        </p>
+        <div class="formula-box">
+          <span class="katex katex-display">P(<span class="katex-text">至少一次第一类错误}) = 1 - (1 - <span class="katex-symbol">α</span>)<sup class="katex-superscript">k</sup></span>
+        </div>
+
+        <h3 class="mt-4 mb-3">校正方法</h3>
+
+        <div class="mb-4">
+          <h4>1. Bonferroni 校正</h4>
+          <p>最简单但最保守的方法：</p>
+          <div class="formula-box">
+            <span class="katex katex-display"><span class="katex-symbol">α</span><sub class="katex-subscript">adjusted</sub> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">α</span></span><span class="katex-denominator">k</span></span></span>
+          </div>
+          <p class="text-muted"><strong>优点：</strong>简单易用，严格控制第一类错误<br /><strong>缺点：</strong>过于保守，可能降低检验功效</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. Holm-Bonferroni 方法</h4>
+          <p>逐步降序调整，比 Bonferroni 更有效：</p>
+          <ol>
+            <li>将所有 P 值从小到大排序：<span class="katex katex-inline">P<sub class="katex-subscript">(1)</sub> ≤ P<sub class="katex-subscript">(2)</sub> ≤ ... ≤ P<sub class="katex-subscript">(k)</sub></span></li>
+            <li>对于第 i 个 P 值，比较 <span class="katex katex-inline">P<sub class="katex-subscript">(i)</sub></span> 与 <span class="katex katex-inline"><span class="katex-fraction"><span class="katex-numerator"><span class="katex-symbol">α</span></span><span class="katex-denominator">k - i + 1</span></span></span></li>
+            <li>从最小的 P 值开始，依次检验</li>
+          </ol>
+          <p class="text-muted"><strong>优点：</strong>比 Bonferroni 更高效<br /><strong>缺点：</strong>仍然相对保守</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. Benjamini-Hochberg (BH) 方法</h4>
+          <p>控制错误发现率（FDR）：</p>
+          <div class="formula-box">
+            <span class="katex katex-display">P<sub class="katex-subscript">(i)</sub> ≤ <span class="katex-fraction"><span class="katex-numerator">i</span><span class="katex-denominator">k</span></span> × <span class="katex-symbol">α</span></span>
+          </div>
+          <p class="text-muted"><strong>优点：</strong>在控制 FDR 的同时保持较高功效<br /><strong>缺点：</strong>可能比 Holm 方法更容易出现第一类错误</p>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📈 样本量计算（Power Analysis）</h2>
+
+        <h3 class="mt-4 mb-3">功效分析的四个要素</h3>
+        <p>已知其中三个，可以计算第四个：</p>
+        <ul>
+          <li><strong>效应量（Effect Size）</strong>：预期的差异大小</li>
+          <li><strong>显著性水平（<span class="katex katex-inline"><span class="katex-symbol">α</span></span>）</strong>：通常为 0.05</li>
+          <li><strong>检验功效（<span class="katex katex-inline">1-<span class="katex-symbol">β</span></span>）</strong>：通常为 0.8 或 0.9</li>
+          <li><strong>样本量（n）</strong>：需要计算</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">单样本 t 检验的样本量公式</h3>
+        <div class="formula-box">
+          <span class="katex katex-display">n = <span class="katex-fraction"><span class="katex-numerator">(<span class="katex-symbol">z</span><sub class="katex-subscript"><span class="katex-symbol">α</span>/2</sub> + <span class="katex-symbol">z</span><sub class="katex-subscript"><span class="katex-symbol">β</span></sub>)<sup class="katex-superscript">2</sup> × <span class="katex-symbol">σ</span><sup class="katex-superscript">2</sup></span><span class="katex-denominator"><span class="katex-symbol">δ</span><sup class="katex-superscript">2</sup></span></span></span>
+        </div>
+        <p class="text-muted">其中 <span class="katex katex-inline"><span class="katex-symbol">δ</span></span> 是要检测的差异大小，<span class="katex katex-inline"><span class="katex-symbol">σ</span></span> 是总体标准差</p>
+
+        <h3 class="mt-4 mb-3">样本量计算示例</h3>
+        <p><strong>问题：</strong>要检测均值为 5 的差异（总体标准差为 10），显著性水平 0.05，功效 0.8，需要多少样本？</p>
+        <p><strong>解答：</strong></p>
+        <ul>
+          <li><span class="katex katex-inline"><span class="katex-symbol">z</span><sub class="katex-subscript"><span class="katex-symbol">α</span>/2</sub> = 1.96</span>（双尾检验）</li>
+          <li><span class="katex katex-inline"><span class="katex-symbol">z</span><sub class="katex-subscript"><span class="katex-symbol">β</span></sub> = 0.84</span>（功效 0.8）</li>
+          <li><span class="katex katex-inline">n = <span class="katex-fraction"><span class="katex-numerator">(1.96 + 0.84)<sup class="katex-superscript">2</sup> × 10<sup class="katex-superscript">2</sup></span><span class="katex-denominator">5<sup class="katex-superscript">2</sup></span></span> = <span class="katex-fraction"><span class="katex-numerator">7.84 × 100</span><span class="katex-denominator">25</span></span> ≈ 31.36</span></li>
+        </ul>
+        <div class="alert alert-success">
+          <strong>结论：</strong>至少需要 32 个样本才能达到 80% 的检验功效。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔬 非参数检验</h2>
+
+        <h3 class="mt-4 mb-3">何时使用非参数检验？</h3>
+        <ul>
+          <li>数据不满足正态分布假设</li>
+          <li>样本量较小</li>
+          <li>数据是序数或名义变量</li>
+          <li>存在明显的离群值</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">常见的非参数检验</h3>
+
+        <div class="mb-4">
+          <h4>1. Wilcoxon 符号秩检验（单样本或配对样本）</h4>
+          <p>检验中位数是否等于某个值，或配对样本的中位数差异是否为 0</p>
+          <p class="text-muted"><strong>对应参数检验：</strong>单样本 t 检验、配对样本 t 检验</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>2. Mann-Whitney U 检验（独立两样本）</h4>
+          <p>检验两个独立样本的分布是否相同</p>
+          <p class="text-muted"><strong>对应参数检验：</strong>独立样本 t 检验</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>3. Kruskal-Wallis 检验（多组样本）</h4>
+          <p>检验多个独立样本的分布是否相同</p>
+          <p class="text-muted"><strong>对应参数检验：</strong>单因素方差分析（ANOVA）</p>
+        </div>
+
+        <div class="mb-4">
+          <h4>4. Friedman 检验（重复测量）</h4>
+          <p>检验多个相关样本的分布是否相同</p>
+          <p class="text-muted"><strong>对应参数检验：</strong>重复测量方差分析</p>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>⚠️ 注意：</strong>非参数检验通常比参数检验功效更低。如果数据满足参数检验的假设，应优先使用参数检验。
+        </div>
+      </div>
     </div>
   </div>
 
@@ -370,11 +637,20 @@
       });
     }
 
+    // 加载Bootstrap和KaTeX
+    var bootstrapCustomScript = document.createElement('script');
+    bootstrapCustomScript.src = 'assets/bootstrap-custom.js';
+    document.body.appendChild(bootstrapCustomScript);
+
+    var katexCustomScript = document.createElement('script');
+    katexCustomScript.src = 'assets/katex-custom.js';
+    document.body.appendChild(katexCustomScript);
+
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '<span class="katex katex-display">', right: '</span>', display: true},
-          {left: '</span>', right: '$', display: false}
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
         ]
       });
     });
