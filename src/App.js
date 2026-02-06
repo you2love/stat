@@ -6,6 +6,8 @@ import Basics from './pages/Basics';
 import Probability from './pages/Probability';
 import Inference from './pages/Inference';
 import DataAnalysis from './pages/DataAnalysis';
+import Population from './pages/Population';
+import TrafficAccidentAnalysis from './pages/TrafficAccidentAnalysis';
 import './App.css';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
             <Route path="/probability" element={<Probability />} />
             <Route path="/inference" element={<Inference />} />
             <Route path="/data-analysis" element={<DataAnalysis />} />
+            <Route path="/population" element={<Population />} />
+            <Route path="/traffic-accident-analysis" element={<TrafficAccidentAnalysis />} />
           </Routes>
         </div>
         <footer className="footer">

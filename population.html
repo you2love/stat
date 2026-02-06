@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="人口数据分析 - 分析中国人口结构变化、老龄化趋势和城镇化进程">
+  <title>人口数据分析 - 统计学学习平台</title>
+  <link rel="stylesheet" href="assets/bootstrap-custom.css">
+  <link rel="stylesheet" href="assets/katex-custom.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="population.html">人口数据分析</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="traffic-accident-analysis.html">交通事故分析</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="population-page">
+      <h1 class="page-title">人口数据分析</h1>
+
+      <div class="content-card">
+        <h2 class="card-title">👥 中国人口结构分析</h2>
+        <p>
+          人口数据是社会科学研究、政策制定和商业决策的重要基础。通过统计分析人口数据，
+          我们可以了解人口增长趋势、年龄结构变化、城镇化进程等重要特征。
+        </p>
+      </div>
+
+      <div class="content-card" style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(63, 81, 181, 0.1) 100%);">
+        <h2 class="card-title">📊 核心指标</h2>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>年末总人口</h3>
+              <p class="stat-value">140,489 万人</p>
+              <p class="stat-label">2025年数据</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>出生率</h3>
+              <p class="stat-value">5.63‰</p>
+              <p class="stat-label">2025年</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>死亡率</h3>
+              <p class="stat-value">8.04‰</p>
+              <p class="stat-label">2025年</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>城镇化率</h3>
+              <p class="stat-value">67.89%</p>
+              <p class="stat-label">2025年</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📈 人口增长趋势分析</h2>
+        
+        <h3 class="mt-4 mb-3">自然增长率计算</h3>
+        <p>自然增长率是衡量人口增长的重要指标：</p>
+        <div class="formula-box">
+          $$\text{自然增长率} = \text{出生率} - \text{死亡率}$$
+        </div>
+        
+        <h4 class="mt-3 mb-2">2022-2025年数据变化</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>总人口（万人）</th>
+              <th>出生率（‰）</th>
+              <th>死亡率（‰）</th>
+              <th>自然增长率（‰）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022</td>
+              <td>141,175</td>
+              <td>6.77</td>
+              <td>7.37</td>
+              <td>-0.60</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>140,967</td>
+              <td>6.39</td>
+              <td>7.87</td>
+              <td>-1.48</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>140,828</td>
+              <td>6.77</td>
+              <td>7.76</td>
+              <td>-0.99</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>140,489</td>
+              <td>5.63</td>
+              <td>8.04</td>
+              <td>-2.41</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-warning mt-3">
+          <strong>⚠️ 关键发现：</strong> 中国人口自2022年开始出现负增长，且负增长趋势在2025年进一步加剧。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">👶👴 年龄结构分析</h2>
+        
+        <h3 class="mt-4 mb-3">人口年龄分组</h3>
+        <p>根据国际标准，人口通常分为三个年龄段：</p>
+        <ul>
+          <li><strong>0-15岁：</strong> 少年人口</li>
+          <li><strong>16-59岁：</strong> 劳动年龄人口</li>
+          <li><strong>60岁及以上：</strong> 老年人口</li>
+        </ul>
+
+        <h4 class="mt-3 mb-2">年龄结构变化趋势</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>0-15岁（万人）</th>
+              <th>16-59岁（万人）</th>
+              <th>60岁及以上（万人）</th>
+              <th>65岁及以上（万人）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022</td>
+              <td>25,615</td>
+              <td>87,556</td>
+              <td>28,004</td>
+              <td>20,978</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>24,789</td>
+              <td>86,481</td>
+              <td>29,697</td>
+              <td>21,676</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>23,999</td>
+              <td>85,798</td>
+              <td>31,031</td>
+              <td>22,023</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>23,999</td>
+              <td>85,798</td>
+              <td>32,338</td>
+              <td>22,365</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-4 mb-3">老龄化指标计算</h3>
+        <p><strong>老龄化率：</strong> 60岁及以上人口占总人口的比例</p>
+        <div class="formula-box">
+          $$\text{老龄化率} = \frac{\text{60岁及以上人口}}{\text{总人口}} \times 100\%$$
+        </div>
+
+        <p class="mt-3"><strong>老年抚养比：</strong> 65岁及以上人口与劳动年龄人口的比例</p>
+        <div class="formula-box">
+          $$\text{老年抚养比} = \frac{\text{65岁及以上人口}}{\text{16-59岁人口}} \times 100\%$$
+        </div>
+
+        <div class="alert alert-info mt-3">
+          <strong>💡 趋势解读：</strong> 
+          <ul>
+            <li>劳动年龄人口持续下降，从2022年的87,556万降至2025年的85,798万</li>
+            <li>老年人口快速增加，60岁及以上人口占比逐年上升</li>
+            <li>老龄化加剧，对社会保障体系带来挑战</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="content-card">
+        <h2 className="card-title">🏙️ 城镇化进程分析</h2>
+        
+        <h3 class="mt-4 mb-3">城镇化率</h3>
+        <p>城镇化率反映一个国家或地区的城市化水平：</p>
+        <div class="formula-box">
+          $$\text{城镇化率} = \frac{\text{城镇常住人口}}{\text{总人口}} \times 100\%$$
+        </div>
+
+        <h4 class="mt-3 mb-2">城镇化发展数据</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>城镇常住人口（万人）</th>
+              <th>城镇化率（%）</th>
+              <th>年增长率（%）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022</td>
+              <td>92,071</td>
+              <td>65.22</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>93,267</td>
+              <td>66.16</td>
+              <td>1.44</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>94,350</td>
+              <td>67.00</td>
+              <td>1.27</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>95,380</td>
+              <td>67.89</td>
+              <td>1.33</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-success mt-3">
+          <strong>📈 发展趋势：</strong> 城镇化率持续稳步上升，年均增长约1.3%，表明城市化进程仍在推进。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">👫 性别结构分析</h2>
+        
+        <h3 class="mt-4 mb-3">性别比例</h3>
+        <p>性别比例是人口结构的重要指标：</p>
+        <div class="formula-box">
+          $$\text{性别比} = \frac{\text{男性人口}}{\text{女性人口}} \times 100$$
+        </div>
+
+        <h4 class="mt-3 mb-2">性别分布数据</h4>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>男性人口（万人）</th>
+              <th>女性人口（万人）</th>
+              <th>性别比</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022</td>
+              <td>72,206</td>
+              <td>68,969</td>
+              <td>104.69</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>72,032</td>
+              <td>68,935</td>
+              <td>104.49</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>71,909</td>
+              <td>68,919</td>
+              <td>104.34</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>71,685</td>
+              <td>68,804</td>
+              <td>104.19</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info mt-3">
+          <strong>📊 结构特点：</strong> 
+          <ul>
+            <li>男性人口略多于女性人口，性别比在104左右</li>
+            <li>性别比呈缓慢下降趋势，结构逐步趋于平衡</li>
+            <li>性别结构对婚姻市场、劳动力供给等有重要影响</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔬 统计分析方法</h2>
+        
+        <h3 class="mt-4 mb-3">趋势分析</h3>
+        <p>通过时间序列分析，识别人口数据的变化趋势：</p>
+        <ul>
+          <li><strong>线性趋势：</strong> 人口是否呈线性增长或下降</li>
+          <li><strong>增长率：</strong> 人口增长的年际变化</li>
+          <li><strong>周期性：</strong> 是否存在周期性波动</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">对比分析</h3>
+        <p>通过横向和纵向对比，发现人口结构特征：</p>
+        <ul>
+          <li><strong>纵向对比：</strong> 同一指标在不同年份的变化</li>
+          <li><strong>横向对比：</strong> 与其他国家或地区比较</li>
+          <li><strong>分组对比：</strong> 按年龄、性别、地区等分组比较</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">相关分析</h3>
+        <p>分析人口各指标之间的关系：</p>
+        <ul>
+          <li><strong>城镇化率与经济增长：</strong> 城镇化进程与经济发展的关系</li>
+          <li><strong>老龄化与社会保障：</strong> 老龄化程度对社会保障压力的影响</li>
+          <li><strong>出生率与经济发展：</strong> 经济发展对生育意愿的影响</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">预测分析</h3>
+        <p>基于历史数据预测未来人口趋势：</p>
+        <ul>
+          <li><strong>趋势外推法：</strong> 基于历史趋势进行预测</li>
+          <li><strong>队列要素法：</strong> 考虑出生、死亡、迁移因素</li>
+          <li><strong>情景分析：</strong> 设定不同假设下的情景预测</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎯 政策启示</h2>
+        
+        <h3 class="mt-4 mb-3">应对人口负增长</h3>
+        <ul>
+          <li><strong>优化生育政策：</strong> 降低育儿成本，鼓励生育</li>
+          <li><strong>提高劳动参与率：</strong> 延迟退休年龄，开发老年人力资源</li>
+          <li><strong>提升劳动力素质：</strong> 加强教育和培训，提高生产效率</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">应对老龄化挑战</h3>
+        <ul>
+          <li><strong>完善养老保障：</strong> 建立多层次养老保障体系</li>
+          <li><strong>发展养老产业：</strong> 满足多样化养老服务需求</li>
+          <li><strong>健康老龄化：</strong> 提高老年人健康水平和生活质量</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">推进新型城镇化</h3>
+        <ul>
+          <li><strong>以人为本：</strong> 提高城镇化质量，促进市民化</li>
+          <li><strong>协调发展：</strong> 促进大中小城市和小城镇协调发展</li>
+          <li><strong>公共服务：</strong> 完善城镇公共服务体系</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📚 延伸阅读</h2>
+        <ul>
+          <li><strong>人口统计学：</strong> 研究人口数量、结构、分布的科学</li>
+          <li><strong>人口转变理论：</strong> 解释人口发展阶段的经典理论</li>
+          <li><strong>人口红利：</strong> 人口结构对经济发展的积极影响</li>
+          <li><strong>人口承载力：</strong> 一定资源条件下的人口容量</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 统计学学习平台 | 通过交互式学习掌握统计学</p>
+  </footer>
+
+  <script src="assets/bootstrap-custom.js"></script>
+  <script src="assets/katex-custom.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -31,6 +31,20 @@ function Home() {
       link: '/data-analysis',
       color: 'icon-blue',
       highlight: true
+    },
+    {
+      icon: '👥',
+      title: '人口数据分析',
+      description: '分析中国人口结构变化、老龄化趋势和城镇化进程',
+      link: '/population',
+      color: 'icon-purple'
+    },
+    {
+      icon: '🚗',
+      title: '交通事故分析',
+      description: '通过实际案例学习统计分析方法在交通安全中的应用',
+      link: '/traffic-accident-analysis',
+      color: 'icon-red'
     }
   ];
 
