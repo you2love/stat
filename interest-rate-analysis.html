@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="银行利率数据分析 - 分析利率变化趋势、影响因素和货币政策">
+  <title>银行利率数据分析 - 统计学学习平台</title>
+  <link rel="stylesheet" href="assets/bootstrap-custom.css">
+  <link rel="stylesheet" href="assets/katex-custom.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">📊 统计学学习平台</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sampling.html">设计与抽样</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="basics.html">统计学基础</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="probability.html">概率论</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inference.html">统计推断</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-analysis.html">数据分析流程</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="population.html">人口数据分析</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="traffic-accident-analysis.html">交通事故分析</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="interest-rate-analysis.html">银行利率分析</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main-content">
+    <div class="interest-rate-page">
+      <h1 class="page-title">银行利率数据分析</h1>
+
+      <div class="content-card">
+        <h2 class="card-title">💰 银行利率分析案例</h2>
+        <p>
+          利率是货币政策的重要工具，对经济发展、投资决策、储蓄行为等都有重要影响。通过分析银行利率数据，我们可以：
+        </p>
+        <ul>
+          <li>理解利率变化的趋势和周期</li>
+          <li>分析利率与经济指标的关系</li>
+          <li>预测利率走势，辅助投资决策</li>
+          <li>评估货币政策的效果</li>
+        </ul>
+        <p class="text-muted">
+          <strong>数据来源：</strong>模拟数据（基于中国央行存贷款基准利率历史数据）
+          <br>
+          <strong>数据范围：</strong>2018-2025年中国央行存贷款基准利率
+        </p>
+      </div>
+
+      <div class="content-card" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);">
+        <h2 class="card-title">📊 核心指标</h2>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>存款基准利率</h3>
+              <p class="stat-value">1.50%</p>
+              <p class="stat-label">一年期（2025年）</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>贷款基准利率</h3>
+              <p class="stat-value">4.35%</p>
+              <p class="stat-label">一年期（2025年）</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>存贷利差</h3>
+              <p class="stat-value">2.85%</p>
+              <p class="stat-label">2025年</p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="stat-card">
+              <h3>利率调整次数</h3>
+              <p class="stat-value">12次</p>
+              <p class="stat-label">2018-2025年</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📈 利率变化趋势分析</h2>
+        
+        <h3 class="mt-4 mb-3">存贷款基准利率历史数据</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>存款利率（一年期）</th>
+              <th>贷款利率（一年期）</th>
+              <th>存贷利差</th>
+              <th>调整次数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2018</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>2019</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>1（降息）</td>
+            </tr>
+            <tr>
+              <td>2021</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>2022</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>2（降息）</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>3（降息）</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>2（降息）</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.85%</td>
+              <td>4（降息）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info mt-3">
+          <strong>📊 趋势解读：</strong> 2020年后，央行多次下调存贷款基准利率，以应对经济下行压力，支持实体经济发展。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 存贷款利率结构分析</h2>
+        
+        <h3 class="mt-4 mb-3">不同期限利率</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>期限</th>
+              <th>存款利率</th>
+              <th>贷款利率</th>
+              <th>特点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>活期</td>
+              <td>0.30%</td>
+              <td>-</td>
+              <td>流动性最强，利率最低</td>
+            </tr>
+            <tr>
+              <td>三个月</td>
+              <td>1.35%</td>
+              <td>-</td>
+              <td>短期存款，利率适中</td>
+            </tr>
+            <tr>
+              <td>六个月</td>
+              <td>1.55%</td>
+              <td>-</td>
+              <td>中期存款，利率较高</td>
+            </tr>
+            <tr>
+              <td>一年期</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>标准期限，最常用</td>
+            </tr>
+            <tr>
+              <td>二年期</td>
+              <td>2.10%</td>
+              <td>-</td>
+              <td>长期存款，利率更高</td>
+            </tr>
+            <tr>
+              <td>三年期</td>
+              <td>2.75%</td>
+              <td>-</td>
+              <td>长期存款，利率最高</td>
+            </tr>
+            <tr>
+              <td>五年期</td>
+              <td>2.75%</td>
+              <td>4.90%</td>
+              <td>最长期限，利率稳定</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-warning mt-3">
+          <strong>⚠️ 利率特征：</strong> 存款利率随期限递增，但超过三年后利率不再上升；贷款利率期限越长，利率越高。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🔗 利率与经济指标关系分析</h2>
+        
+        <h3 class="mt-4 mb-3">相关经济指标</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>年份</th>
+              <th>存款利率</th>
+              <th>贷款利率</th>
+              <th>GDP增长率</th>
+              <th>CPI</th>
+              <th>M2增长率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2018</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>6.7%</td>
+              <td>2.1%</td>
+              <td>8.1%</td>
+            </tr>
+            <tr>
+              <td>2019</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>6.0%</td>
+              <td>2.9%</td>
+              <td>8.7%</td>
+            </tr>
+            <tr>
+              <td>2020</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>2.2%</td>
+              <td>2.5%</td>
+              <td>10.1%</td>
+            </tr>
+            <tr>
+              <td>2021</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>8.4%</td>
+              <td>0.9%</td>
+              <td>9.0%</td>
+            </tr>
+            <tr>
+              <td>2022</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>3.0%</td>
+              <td>2.0%</td>
+              <td>11.8%</td>
+            </tr>
+            <tr>
+              <td>2023</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>5.2%</td>
+              <td>0.2%</td>
+              <td>9.7%</td>
+            </tr>
+            <tr>
+              <td>2024</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>4.8%</td>
+              <td>0.3%</td>
+              <td>8.2%</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>1.50%</td>
+              <td>4.35%</td>
+              <td>5.1%</td>
+              <td>0.5%</td>
+              <td>7.5%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-5 mb-3">相关性分析</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>指标组合</th>
+              <th>相关系数</th>
+              <th>相关性</th>
+              <th>解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>贷款利率 - GDP增长率</td>
+              <td>0.65</td>
+              <td>正相关</td>
+              <td>经济好时利率高</td>
+            </tr>
+            <tr>
+              <td>贷款利率 - CPI</td>
+              <td>0.58</td>
+              <td>正相关</td>
+              <td>通胀高时利率高</td>
+            </tr>
+            <tr>
+              <td>贷款利率 - M2增长率</td>
+              <td>-0.42</td>
+              <td>负相关</td>
+              <td>货币宽松时利率低</td>
+            </tr>
+            <tr>
+              <td>存款利率 - CPI</td>
+              <td>0.52</td>
+              <td>正相关</td>
+              <td>通胀高时利率高</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-success mt-3">
+          <strong>📈 关键发现：</strong> 利率与GDP增长率和CPI呈正相关，与M2增长率呈负相关，符合经济学理论。
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🧮 利率计算公式</h2>
+        
+        <h3 class="mt-4 mb-3">单利计算</h3>
+        <p>单利是指只计算本金产生的利息，利息不产生利息：</p>
+        <div class="formula-box">
+          $$I = P \times r \times t$$
+        </div>
+        <p>其中：</p>
+        <ul>
+          <li><strong>I：</strong>利息</li>
+          <li><strong>P：</strong>本金</li>
+          <li><strong>r：</strong>年利率</li>
+          <li><strong>t：</strong>时间（年）</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">复利计算</h3>
+        <p>复利是指利息也会产生利息，即"利滚利"：</p>
+        <div class="formula-box">
+          $$A = P \times (1 + r)^t$$
+        </div>
+        <p>其中：</p>
+        <ul>
+          <li><strong>A：</strong>本息合计</li>
+          <li><strong>P：</strong>本金</li>
+          <li><strong>r：</strong>年利率</li>
+          <li><strong>t：</strong>时间（年）</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">实际年利率（EAR）</h3>
+        <p>当计息频率不是每年一次时，需要计算实际年利率：</p>
+        <div class="formula-box">
+          $$EAR = \left(1 + \frac{r}{n}\right)^n - 1$$
+        </div>
+        <p>其中：</p>
+        <ul>
+          <li><strong>EAR：</strong>实际年利率</li>
+          <li><strong>r：</strong>名义年利率</li>
+          <li><strong>n：</strong>每年计息次数</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">等额本息还款</h3>
+        <p>贷款每月还款额计算：</p>
+        <div class="formula-box">
+          $$M = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
+        </div>
+        <p>其中：</p>
+        <ul>
+          <li><strong>M：</strong>每月还款额</li>
+          <li><strong>P：</strong>贷款本金</li>
+          <li><strong>r：</strong>月利率</li>
+          <li><strong>n：</strong>还款月数</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">📊 统计分析方法</h2>
+        
+        <h3 class="mt-4 mb-3">时间序列分析</h3>
+        <ul>
+          <li><strong>趋势分析：</strong> 识别利率的长期变化趋势</li>
+          <li><strong>季节性分析：</strong> 检查是否存在季节性波动</li>
+          <li><strong>周期性分析：</strong> 识别经济周期对利率的影响</li>
+          <li><strong>自相关分析：</strong> 分析利率序列的自相关性</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">回归分析</h3>
+        <ul>
+          <li><strong>线性回归：</strong> 分析利率与GDP、CPI的关系</li>
+          <li><strong>多元回归：</strong> 综合考虑多个影响因素</li>
+          <li><strong>时间序列回归：</strong> 考虑时间序列特性的回归模型</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">协整分析</h3>
+        <ul>
+          <li><strong>单位根检验：</strong> 检验利率序列的平稳性</li>
+          <li><strong>协整检验：</strong> 检验利率与经济指标的长期均衡关系</li>
+          <li><strong>误差修正模型：</strong> 描述短期波动和长期均衡</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">💡 实际应用</h2>
+        
+        <h3 class="mt-4 mb-3">投资决策</h3>
+        <ul>
+          <li><strong>储蓄规划：</strong> 根据利率变化选择存款期限</li>
+          <li><strong>债券投资：</strong> 利率上升债券价格下降</li>
+          <li><strong>股票投资：</strong> 低利率环境利好股市</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">融资决策</h3>
+        <ul>
+          <li><strong>贷款时机：</strong> 利率低时贷款更划算</li>
+          <li><strong>固定vs浮动：</strong> 选择固定利率还是浮动利率</li>
+          <li><strong>提前还款：</strong> 利率下降时考虑提前还款</li>
+        </ul>
+
+        <h3 class="mt-4 mb-3">风险管理</h3>
+        <ul>
+          <li><strong>利率风险：</strong> 利率变化对资产价值的影响</li>
+          <li><strong>久期管理：</strong> 通过久期管理利率风险</li>
+          <li><strong>对冲策略：</strong> 使用衍生品对冲利率风险</li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <h2 class="card-title">🎓 学习要点</h2>
+        <p>通过本案例分析，你应该掌握：</p>
+        <ul>
+          <li><strong>利率概念：</strong> 理解存贷款利率、实际利率、名义利率</li>
+          <li><strong>利率计算：</strong> 掌握单利、复利、等额本息等计算方法</li>
+          <li><strong>趋势分析：</strong> 分析利率变化的时间序列特征</li>
+          <li><strong>相关分析：</strong> 理解利率与经济指标的关系</li>
+          <li><strong>实际应用：</strong> 将利率分析应用于投资和融资决策</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/bootstrap-custom.js"></script>
+  <script src="assets/katex-custom.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

@@ -42,6 +42,9 @@
           <li class="nav-item">
             <a class="nav-link" href="traffic-accident-analysis.html">交通事故分析</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="interest-rate-analysis.html">银行利率分析</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -67,9 +70,9 @@
           <h4>均值 (Mean)</h4>
           <p>均值是所有数据的总和除以数据的数量。</p>
           <div class="formula-box">
-            <span class="katex katex-display"><span class="katex-symbol">x̄</span> = <span class="katex-fraction"><span class="katex-numerator"><span class="katex-op">∑</span><sub class="katex-subscript">i=1</sub><sup class="katex-superscript">n</sup> x<sub class="katex-subscript">i</sub></span><span class="katex-denominator">n</span></span></span></span>
+            $$\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}$$
           </div>
-          <p class="text-muted">其中 <span class="katex katex-inline"><span class="katex-symbol">x̄</span></span></span> 是均值，<span class="katex katex-inline">x<sub class="katex-subscript">i</sub></span> 是每个数据点，<span class="katex katex-inline">n</span> 是数据总数。</p>
+          <p class="text-muted">其中 $\bar{x}$ 是均值，$x_i$ 是每个数据点，$n$ 是数据总数。</p>
         </div>
 
         <div class="mb-4">
@@ -1054,8 +1057,8 @@
     document.addEventListener("DOMContentLoaded", function() {
       renderMathInElement(document.body, {
         delimiters: [
-          {left: '<span class="katex katex-display">', right: '</span>', display: true},
-          {left: '</span>', right: '$', display: false}
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
         ]
       });
     });
