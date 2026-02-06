@@ -10,6 +10,7 @@ function Navbar() {
     { path: '/probability', label: '概率论' },
     { path: '/inference', label: '统计推断' },
     { path: '/data-analysis', label: '数据分析流程' },
+    { path: '/traffic-accident-analysis', label: '交通事故分析' },
   ];
 
   return (
