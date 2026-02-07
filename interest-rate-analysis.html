@@ -380,7 +380,7 @@
         <h3 class="mt-4 mb-3">单利计算</h3>
         <p>单利是指只计算本金产生的利息，利息不产生利息：</p>
         <div class="formula-box">
-          $$I = P \times r \times t$$
+          <img src="formulas/simple-interest.png" alt="单利计算公式: I = P × r × t" style="max-width: 100%; max-height: 150px; height: auto;">
         </div>
         <p>其中：</p>
         <ul>
@@ -393,7 +393,7 @@
         <h3 class="mt-4 mb-3">复利计算</h3>
         <p>复利是指利息也会产生利息，即"利滚利"：</p>
         <div class="formula-box">
-          $$A = P \times (1 + r)^t$$
+          <img src="formulas/compound-interest.png" alt="复利计算公式: A = P × (1 + r)^t" style="max-width: 100%; max-height: 150px; height: auto;">
         </div>
         <p>其中：</p>
         <ul>
@@ -406,7 +406,7 @@
         <h3 class="mt-4 mb-3">实际年利率（EAR）</h3>
         <p>当计息频率不是每年一次时，需要计算实际年利率：</p>
         <div class="formula-box">
-          $$EAR = \left(1 + \frac{r}{n}\right)^n - 1$$
+          <img src="formulas/effective-annual-rate.png" alt="实际年利率公式: EAR = (1 + r/n)^n - 1" style="max-width: 100%; max-height: 150px; height: auto;">
         </div>
         <p>其中：</p>
         <ul>
@@ -418,7 +418,7 @@
         <h3 class="mt-4 mb-3">等额本息还款</h3>
         <p>贷款每月还款额计算：</p>
         <div class="formula-box">
-          $$M = P \times \frac{r(1+r)^n}{(1+r)^n - 1}$$
+          <img src="formulas/installment-loan.png" alt="等额本息还款公式: M = P × r(1+r)^n / ((1+r)^n - 1)" style="max-width: 100%; max-height: 150px; height: auto;">
         </div>
         <p>其中：</p>
         <ul>
@@ -496,16 +496,5 @@
   </div>
 
   <script src="assets/bootstrap-custom.js"></script>
-  <script src="assets/katex-custom.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
-        ]
-      });
-    });
-  </script>
 </body>
 </html>

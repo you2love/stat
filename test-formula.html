@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试公式渲染</title>
+  <link rel="stylesheet" href="assets/katex-custom.css">
+</head>
+<body>
+  <h1>公式渲染测试</h1>
+
+  <h2>测试1：简单公式</h2>
+  <div class="formula-box">
+    $$E = mc^2$$
+  </div>
+
+  <h2>测试2：包含中文的公式</h2>
+  <div class="formula-box">
+    $$\text{自然增长率} = \text{出生率} - \text{死亡率}$$
+  </div>
+
+  <h2>测试3：包含分数的公式</h2>
+  <div class="formula-box">
+    $$\text{老龄化率} = \frac{\text{60岁及以上人口}}{\text{总人口}} \times 100\%$$
+  </div>
+
+  <h2>测试4：内联公式</h2>
+  <p>这是一个内联公式：$x^2 + y^2 = z^2$，它应该在文本中正确显示。</p>
+
+  <script src="assets/katex-custom.js"></script>
+  <script>
+    console.log('页面加载完成，准备渲染公式');
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log('DOMContentLoaded事件触发');
+      console.log('document.body:', document.body);
+      console.log('renderMathInElement函数:', typeof renderMathInElement);
+
+      if (typeof renderMathInElement === 'function') {
+        console.log('开始渲染公式');
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ]
+        });
+        console.log('公式渲染完成');
+      } else {
+        console.error('renderMathInElement函数未定义！');
+      }
+    });
+  </script>
+</body>
+</html>

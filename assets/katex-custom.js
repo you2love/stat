@@ -80,10 +80,11 @@
       'in': '∈', 'notin': '∉',
       'forall': '∀', 'exists': '∃',
       'wedge': '∧', 'vee': '∨',
-      'cdot': '·', 'lvert': '|', 'rvert': '|',
-      'text': '', 'leftarrow': '←', 'rightarrow': '→',
+      'lvert': '|', 'rvert': '|',
+      'leftarrow': '←', 'rightarrow': '→',
       'Leftarrow': '⇐', 'Rightarrow': '⇒',
-      'Leftrightarrow': '⇔', 'iff': '⇔'
+      'Leftrightarrow': '⇔', 'iff': '⇔',
+      'percent': '%'
     };
 
     Object.keys(mathSymbols).forEach(key => {
@@ -197,6 +198,8 @@
 
     console.log('renderMathInElement 被调用');
     console.log('分隔符:', delimiters);
+    console.log('元素:', element);
+    console.log('元素HTML:', element.innerHTML);
 
     // Find all text nodes
     const walker = document.createTreeWalker(
@@ -205,6 +208,9 @@
       {
         acceptNode: function(node) {
           // Skip text nodes inside script, style, or already processed math
+          if (!node.parentNode) {
+            return NodeFilter.FILTER_REJECT;
+          }
           if (node.parentNode.tagName === 'SCRIPT' ||
               node.parentNode.tagName === 'STYLE' ||
               node.parentNode.classList && node.parentNode.classList.contains('katex')) {
@@ -214,6 +220,7 @@
           const text = node.nodeValue;
           for (const delim of delimiters) {
             if (text.includes(delim.left) && text.includes(delim.right)) {
+              console.log('找到匹配的文本节点:', text);
               return NodeFilter.FILTER_ACCEPT;
             }
           }

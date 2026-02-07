@@ -1,8 +1,8 @@
 /* KaTeX-like CSS - Minimal implementation for math formulas */
 
 .katex {
-  font: normal 1.21em KaTeX_Main, 'Times New Roman', Times, serif;
-  line-height: 1.2;
+  font: normal 1.21em 'SimHei', 'Microsoft YaHei', 'Arial Unicode MS', 'Times New Roman', Times, serif;
+  line-height: 1.5;
   white-space: nowrap;
   text-indent: 0;
   text-rendering: auto;
@@ -12,6 +12,9 @@
   display: block;
   margin: 1em 0;
   text-align: center;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .katex-display > .katex {
@@ -27,9 +30,24 @@
 }
 
 /* Math symbol styles */
-.katex-symbol {
-  font-family: KaTeX_Math, 'Times New Roman', Times, serif;
-  font-style: italic;
+.katex-symbol,
+.katex sup, .katex sub {
+  font-family: 'SimHei', 'Microsoft YaHei', 'Arial Unicode MS', 'Times New Roman', Times, serif;
+  font-style: normal;
+  padding: 0 0.1em;
+}
+
+/* Superscript and subscript */
+.katex sup {
+  font-size: 0.75em;
+  vertical-align: 0.25em;
+  margin-left: 0.1em;
+}
+
+.katex sub {
+  font-size: 0.75em;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
 }
 
 .katex-text {
@@ -56,18 +74,21 @@
   display: inline-block;
   text-align: center;
   vertical-align: 0.2em;
-  padding: 0 0.2em;
+  padding: 0 0.4em;
+  margin: 0 0.2em;
 }
 
 .katex-fraction > .katex-numerator {
   display: block;
-  border-bottom: 1px solid #000;
-  padding: 0 0.1em;
+  border-bottom: 1.5px solid #000;
+  padding: 0.3em 0.3em;
+  font-size: 1em;
 }
 
 .katex-fraction > .katex-denominator {
   display: block;
-  padding: 0 0.1em;
+  padding: 0.3em 0.3em;
+  font-size: 1em;
 }
 
 /* Square root */
@@ -123,6 +144,9 @@
 /* Inline math styling */
 .katex-inline {
   font-size: 1em;
+  display: inline;
+  vertical-align: middle;
+  padding: 0 0.1em;
 }
 
 /* Display math styling */
@@ -134,8 +158,11 @@
 
 /* Text command */
 .katex-text {
-  font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+  font-family: 'SimHei', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif;
   font-style: normal;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0 0.2em;
 }
 
 /* Cases environment */
@@ -210,9 +237,10 @@
 
 /* Operator */
 .katex-operator {
-  font-family: KaTeX_Main;
+  font-family: 'SimHei', 'Microsoft YaHei', 'Arial Unicode MS', 'Times New Roman', serif;
   font-style: normal;
   padding: 0 0.1em;
+  font-weight: normal;
 }
 
 /* Parentheses and brackets */
